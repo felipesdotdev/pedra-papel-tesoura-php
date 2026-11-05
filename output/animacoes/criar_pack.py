@@ -180,6 +180,7 @@ bodyprefix=('Solado','Tenis','Biqueira','Perna','Cintura','Braco','Mao','Tronco'
 headobs=[ob for name,ob in objects.items() if ob.type=='MESH' and ob in list(char.objects) and not name.startswith(bodyprefix)]
 head=merge('PACK | Cabeca unificada',headobs);bind(head,'head')
 for name,ob in list(objects.items()):
+    if not name.startswith(bodyprefix):continue
     if ob.type!='MESH' or name not in source_char.objects:continue
     if name.startswith('Mao'):
         bpy.data.objects.remove(ob,do_unlink=True);continue

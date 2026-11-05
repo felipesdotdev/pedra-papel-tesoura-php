@@ -1,7 +1,7 @@
 # Graph Report - pedra-papel-tesoura-php  (2026-11-05)
 
 ## Corpus Check
-- 28 files · ~456,123 words
+- 28 files · ~545,946 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

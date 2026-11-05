@@ -20860,7 +20860,7 @@
       "label": "hoop()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L223",
+      "source_location": "L224",
       "id": "animacoes_criar_pack_hoop",
       "community": 20,
       "norm_label": "hoop()"
@@ -20869,7 +20869,7 @@
       "label": "curve()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L243",
+      "source_location": "L244",
       "id": "animacoes_criar_pack_curve",
       "community": 20,
       "norm_label": "curve()"
@@ -20878,7 +20878,7 @@
       "label": "path()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L253",
+      "source_location": "L254",
       "id": "animacoes_criar_pack_path",
       "community": 20,
       "norm_label": "path()"
@@ -20887,7 +20887,7 @@
       "label": "q()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L254",
+      "source_location": "L255",
       "id": "animacoes_criar_pack_q",
       "community": 20,
       "norm_label": "q()"
@@ -20896,7 +20896,7 @@
       "label": "key()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L255",
+      "source_location": "L256",
       "id": "animacoes_criar_pack_key",
       "community": 20,
       "norm_label": "key()"
@@ -20905,7 +20905,7 @@
       "label": "control()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L257",
+      "source_location": "L258",
       "id": "animacoes_criar_pack_control",
       "community": 20,
       "norm_label": "control()"
@@ -20914,7 +20914,7 @@
       "label": "prop()",
       "file_type": "code",
       "source_file": "output\\animacoes\\criar_pack.py",
-      "source_location": "L260",
+      "source_location": "L261",
       "id": "animacoes_criar_pack_prop",
       "community": 20,
       "norm_label": "prop()"
@@ -79267,9 +79267,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_material",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_material"
     },
     {
       "relation": "contains",
@@ -79277,9 +79277,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_mesh",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_mesh"
     },
     {
       "relation": "contains",
@@ -79287,9 +79287,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_box",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_box"
     },
     {
       "relation": "contains",
@@ -79297,9 +79297,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_segment",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_segment"
     },
     {
       "relation": "contains",
@@ -79307,9 +79307,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_merge",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_merge"
     },
     {
       "relation": "contains",
@@ -79317,9 +79317,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_slices",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_slices"
     },
     {
       "relation": "contains",
@@ -79327,9 +79327,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L101",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_bone",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_bone"
     },
     {
       "relation": "contains",
@@ -79337,9 +79337,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_bind",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_bind"
     },
     {
       "relation": "contains",
@@ -79347,9 +79347,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_smooth",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_smooth"
     },
     {
       "relation": "contains",
@@ -79357,9 +79357,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_torso_weights",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_torso_weights"
     },
     {
       "relation": "contains",
@@ -79367,9 +79367,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_hoop",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_hoop"
     },
     {
       "relation": "contains",
@@ -79377,9 +79377,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L243",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_curve",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_curve"
     },
     {
       "relation": "contains",
@@ -79387,9 +79387,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_path",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_path"
     },
     {
       "relation": "contains",
@@ -79397,9 +79397,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L254",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_q",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_q"
     },
     {
       "relation": "contains",
@@ -79407,9 +79407,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L255",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_key",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_key"
     },
     {
       "relation": "contains",
@@ -79417,9 +79417,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L257",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_control",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_control"
     },
     {
       "relation": "contains",
@@ -79427,9 +79427,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L260",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "output_animacoes_criar_pack_py",
-      "target": "animacoes_criar_pack_prop",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_prop"
     },
     {
       "relation": "rationale_for",
@@ -79437,9 +79437,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_rationale_1",
-      "target": "output_animacoes_criar_pack_py",
-      "confidence_score": 1.0
+      "target": "output_animacoes_criar_pack_py"
     },
     {
       "relation": "calls",
@@ -79448,9 +79448,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_segment",
-      "target": "animacoes_criar_pack_mesh",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_mesh"
     },
     {
       "relation": "calls",
@@ -79459,9 +79459,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_merge",
-      "target": "animacoes_criar_pack_mesh",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_mesh"
     },
     {
       "relation": "calls",
@@ -79470,9 +79470,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_hoop",
-      "target": "animacoes_criar_pack_mesh",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_mesh"
     },
     {
       "relation": "calls",
@@ -79481,9 +79481,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_hoop",
-      "target": "animacoes_criar_pack_bind",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_bind"
     },
     {
       "relation": "calls",
@@ -79492,9 +79492,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_torso_weights",
-      "target": "animacoes_criar_pack_smooth",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_smooth"
     },
     {
       "relation": "calls",
@@ -79503,9 +79503,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L253",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_path",
-      "target": "animacoes_criar_pack_curve",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_curve"
     },
     {
       "relation": "calls",
@@ -79514,9 +79514,9 @@
       "source_file": "output\\animacoes\\criar_pack.py",
       "source_location": "L259",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "animacoes_criar_pack_control",
-      "target": "animacoes_criar_pack_q",
-      "confidence_score": 1.0
+      "target": "animacoes_criar_pack_q"
     },
     {
       "relation": "contains",
