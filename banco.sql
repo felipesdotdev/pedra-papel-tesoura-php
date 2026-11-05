@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS pedra_papel_tesoura CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE pedra_papel_tesoura;
+-- Selecione antes o banco da aplicação (ex.: no phpMyAdmin).
+-- Este arquivo cria somente as tabelas, para aceitar nomes de banco da hospedagem.
 
 CREATE TABLE IF NOT EXISTS jogadores (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

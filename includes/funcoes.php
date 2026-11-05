@@ -1,12 +1,17 @@
 <?php
-ini_set('session.use_strict_mode', '1');
-session_set_cookie_params([
-    'httponly' => true,
-    'samesite' => 'Lax',
-    'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
-]);
-session_start();
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+if (function_exists('session_start')) {
+    ini_set('session.use_strict_mode', '1');
+    session_set_cookie_params([
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
+    ]);
+    session_start();
+}
 require_once __DIR__ . '/../config/banco.php';
+require_once __DIR__ . '/diagnostico.php';
 
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(24));
@@ -57,6 +62,11 @@ function campoCsrf(): void
 
 function inicioPagina(string $titulo, string $layout = 'pagina'): void
 {
+    try {
+        verificarInstalacao();
+    } catch (Throwable $erro) {
+        mostrarConfiguracao($erro);
+    }
     global $layoutPagina;
     $layoutPagina = $layout;
     header('Cache-Control: no-store');
@@ -64,7 +74,7 @@ function inicioPagina(string $titulo, string $layout = 'pagina'): void
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
     echo '<title>' . escapar($titulo) . ' · Pedra, papel e tesoura</title>';
     echo '<link rel="preload" href="assets/fonts/BarlowCondensed-BlackItalic.ttf" as="font" type="font/ttf" crossorigin>';
-    echo '<link rel="stylesheet" href="assets/estilo.css?v=5"></head><body class="tela-' . escapar($layout) . '">';
+    echo '<link rel="stylesheet" href="assets/estilo.css?v=6"></head><body class="tela-' . escapar($layout) . '">';
     echo '<div class="fundo-cenario" aria-hidden="true"></div><div class="painel-menu" aria-hidden="true"></div>';
     echo '<main class="container" id="conteudo">';
     if ($layout === 'pagina') {
@@ -90,9 +100,8 @@ function fimPagina(): void
 
 function falhaPagina(Throwable $erro): never
 {
-    if ($erro instanceof PDOException) {
-        error_log((string) $erro);
-        $mensagem = 'Não foi possível acessar o banco. Confira a configuração e a importação de banco.sql.';
+    if ($erro instanceof PDOException || $erro instanceof ErroConfiguracao) {
+        mostrarConfiguracao($erro);
     } else {
         $mensagem = $erro->getMessage();
     }
@@ -150,7 +159,7 @@ function criarSala(int $jogadorId, string $modo): int
         banco()->commit();
         return $id;
     } catch (Throwable $erro) {
-        banco()->rollBack();
+        cancelarTransacao(banco());
         throw $erro;
     }
 }

@@ -1,0 +1,24 @@
+.tela-configuracao { background: #f3f5f6; color: #17232a; }
+.configuracao { width: min(100% - 40px, 850px); margin: 0 auto; padding: 36px 0 50px; }
+.configuracao > .marca { display: inline-block; margin-bottom: 30px; }
+.problema-configuracao { padding: 30px; border-top: 4px solid #da9f43; background: #fff; }
+.configuracao-pronta { border-top-color: #2f8b68; }
+.codigo-diagnostico { display: inline-block; padding: 5px 8px; background: #eef2f4; color: #596d79; font: 12px monospace; }
+.configuracao h1 { margin: 18px 0; font-size: clamp(32px, 5vw, 52px); line-height: 1.05; }
+.configuracao h2 { margin: 26px 0 12px; font-size: 25px; }
+.configuracao p, .configuracao li { font-size: 14px; line-height: 1.8; }
+.configuracao ol { padding-left: 22px; }
+.configuracao li + li { margin-top: 10px; }
+.configuracao code { overflow-wrap: anywhere; font-size: 12px; }
+.guia-configuracao { margin-top: 24px; padding: 20px 25px; border: 1px solid #d2dde3; }
+.guia-configuracao summary { cursor: pointer; font-size: 14px; font-weight: 700; line-height: 1.6; }
+.guia-configuracao pre { padding: 18px; background: #e6ecef; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+.configuracao .acoes { gap: 20px; }
+.configuracao .botao-jogo { font-size: 21px; }
+@media (max-width: 560px) {
+    .configuracao { width: calc(100% - 28px); padding-top: 24px; }
+    .problema-configuracao { padding: 24px 18px; }
+    .guia-configuracao { padding: 18px; }
+    .configuracao li, .configuracao p { font-size: 13px; }
+    .guia-configuracao pre { padding: 12px; }
+}

@@ -43,6 +43,6 @@ try {
     banco()->commit();
     redirecionar('sala.php?id=' . $sala['id']);
 } catch (Throwable $e) {
-    if ($conexao && $conexao->inTransaction()) { $conexao->rollBack(); }
+    cancelarTransacao($conexao);
     falhaPagina($e);
 }

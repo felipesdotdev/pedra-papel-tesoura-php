@@ -24,6 +24,7 @@ inicioPagina('Sala ' . $sala['codigo']);
 <button type="button" data-escolha="tesoura" disabled><span>✌️</span>Tesoura</button>
 </div>
 <p id="erro" class="aviso" role="alert" hidden></p>
+<a id="ajuda-configuracao" href="configuracao.php" hidden>Ver instruções de configuração</a>
 <button type="button" id="revanche" hidden>Jogar novamente</button>
 <p id="pedido-revanche" class="ajuda"></p>
 </section>

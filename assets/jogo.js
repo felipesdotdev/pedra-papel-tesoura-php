@@ -75,6 +75,7 @@ async function requisicao(caminho, dados) {
     let json;
     try { json = await resposta.json(); }
     catch { throw new Error('O servidor não respondeu corretamente. Tente novamente.'); }
+    document.querySelector('#ajuda-configuracao').hidden = !json.configuracao;
     if (!resposta.ok) throw new Error(json.erro || 'Não foi possível concluir a ação.');
     return json;
 }

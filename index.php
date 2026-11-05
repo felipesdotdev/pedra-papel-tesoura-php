@@ -1,5 +1,10 @@
 <?php
 require __DIR__ . '/includes/funcoes.php';
+try {
+    verificarInstalacao();
+} catch (Throwable $e) {
+    mostrarConfiguracao($e);
+}
 $erro = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
@@ -13,9 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['jogador_id'] = (int) banco()->lastInsertId();
         redirecionar('menu.php');
     } catch (Throwable $e) {
-        if ($e instanceof PDOException) {
-            error_log((string) $e);
-            $erro = 'Não foi possível acessar o banco. Confira config/banco.php e importe banco.sql.';
+        if ($e instanceof PDOException || $e instanceof ErroConfiguracao) {
+            mostrarConfiguracao($e);
         } else {
             $erro = $e->getMessage();
         }

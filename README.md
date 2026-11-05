@@ -18,7 +18,7 @@ cd pedra-papel-tesoura-php
 ```
 
 1. Inicie seu servidor MySQL/MariaDB.
-2. Importe `banco.sql` usando a aba **Importar** do phpMyAdmin. Também pode executar `mysql -u root -p < banco.sql` em um terminal que aceite esse redirecionamento, como CMD ou Bash. O arquivo cria o banco e as tabelas sem apagar registros existentes.
+2. Crie um banco com charset `utf8mb4`, selecione-o no phpMyAdmin e importe `banco.sql`. No terminal, um exemplo é `mysql -u root -p pedra_papel_tesoura < banco.sql`, depois de criar esse banco. Use um terminal que aceite esse redirecionamento, como CMD ou Bash. O arquivo cria somente as tabelas, sem apagar registros existentes e sem impor um nome de banco.
 3. Por padrão, o projeto conecta em `127.0.0.1:3306`, banco `pedra_papel_tesoura`, usuário `root`, senha vazia. Se necessário, copie `config/banco.local.exemplo.php` para `config/banco.local.php` e edite os valores. O arquivo local está no `.gitignore`.
 4. Na pasta do projeto, execute:
 
@@ -31,6 +31,19 @@ cd pedra-papel-tesoura-php
 Também é possível colocar a pasta no diretório público do XAMPP/Laragon ou utilizar o Herd. O servidor embutido do PHP serve para desenvolvimento e apresentação local.
 
 As variáveis de ambiente `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` e `DB_PASS` também são aceitas. A configuração local tem prioridade.
+
+## Configuração e diagnóstico no deploy
+
+A página inicial verifica extensões, sessão, conexão, tabelas e colunas antes de exibir o jogo. Se algo estiver faltando, apresenta a causa e instruções específicas. Também é possível abrir `configuracao.php` diretamente para verificar novamente; com a instalação correta, ela mostra a confirmação.
+
+- Erros de configuração retornam HTTP **503**; falhas SQL não identificadas retornam **500**. A verificação bem-sucedida retorna **200**.
+- As APIs continuam respondendo JSON, com um código de diagnóstico e o endereço da ajuda. Se o banco cair durante uma partida, a tela oferece o link para as instruções e continua tentando atualizar.
+- A página não cria banco, usuário, tabelas ou permissões automaticamente. Ela não exibe senha, usuário, host, SQL interno ou stack trace. Os detalhes técnicos ficam no log de erros do PHP.
+- Em hospedagem compartilhada, use o nome completo fornecido pelo painel, incluindo prefixos. Importe `banco.sql` no banco selecionado. O usuário da aplicação precisa de `SELECT`, `INSERT` e `UPDATE`; a importação deve ser feita por alguém com permissão de criar tabelas.
+- Se já houver tabelas de uma versão anterior, faça backup e atualize as colunas conforme `banco.sql`. `CREATE TABLE IF NOT EXISTS` não modifica tabelas existentes.
+- A verificação confirma a leitura das tabelas. Permissões de escrita são conferidas quando uma ação do jogo tenta salvar dados; erros também abrem a ajuda.
+
+Para testar a classificação dos erros sem instalar dependências: `php tests/diagnostico.php`.
 
 ## Arquivos dos personagens e continuação do trabalho
 
@@ -50,9 +63,9 @@ No outro computador, use `git pull` antes de continuar. As credenciais de `confi
 
 Com o servidor PHP iniciado, abra **http://localhost:8000/personagem.php**. Essa página é independente do MySQL e não exige login. O personagem pode ser girado e aproximado no navegador. O PHP serve a página; a renderização 3D acontece no navegador com WebGL.
 
-O modelo exportado está em `assets/personagem/personagem.glb` (aproximadamente 96 KB), com os materiais incorporados. A imagem de reserva está em `assets/personagem/poster.png`. A biblioteca `model-viewer` 4.4.0 está incluída em `assets/vendor/`, com sua licença, sem CDN ou instalação de pacotes para executar a página.
+O modelo animado atual está em `assets/personagem/animacoes/personagem-combinado.glb` (aproximadamente 1,6 MB), com geometria, materiais, textura de barba e quatro clipes incorporados. O rosto e o cabelo frontais vêm da versão original aprovada; a rigagem, o corpo e os detalhes aproveitam o trabalho posterior. A imagem de reserva está em `assets/personagem/animacoes/poster-combinado.png`. A biblioteca `model-viewer` 4.4.0 está incluída em `assets/vendor/`, com sua licença, sem CDN ou instalação de pacotes para executar a página.
 
-O arquivo editável da versão atual é `output/personagem/personagem.blend`. O componente usa a data de modificação nas URLs do modelo e do poster para evitar exibir versões antigas após uma atualização.
+O arquivo editável atual é `output/animacoes/personagem_combinado_animado.blend`. A versão estática anterior continua preservada em `output/personagem/personagem.blend` e `assets/personagem/personagem.glb`. O componente usa a data de modificação nas URLs para evitar exibir modelos antigos após uma atualização.
 
 Para incluir em outra página PHP na raiz do projeto:
 
@@ -64,7 +77,7 @@ Carregue também `assets/estilo.css` no `<head>` para os estilos base dos botõe
 
 Para hospedar, envie `personagem.php`, `includes/personagem.php` e a pasta `assets/` para um servidor PHP. Sirva `.js` como JavaScript e `.glb` como `model/gltf-binary` (ou `application/octet-stream`). Use HTTP/HTTPS; abrir pelo explorador de arquivos não executa o PHP. Em caso de falha de WebGL ou JavaScript desativado, a imagem permanece visível.
 
-O modelo atual é estático, sem esqueleto ou animações corporais. A iluminação em tempo real pode diferir da renderização do Blender. A vista frontal é a vista principal da referência.
+O pack inclui `Idle` (repouso), `Pedra` (retirada do bolso e arremesso), `Papel` (lançamento de avião) e `Tesoura` (retirada do bolso e três cortes no ar). A página oferece reprodução, pausa, velocidade e uma barra para inspecionar as poses. Com preferência por movimento reduzido, o repouso não começa automaticamente; os gestos continuam disponíveis por ação do usuário. A iluminação em tempo real pode diferir da renderização do Blender. Consulte `output/animacoes/LEIA-ME.md` para detalhes do rig e dos clipes.
 
 ## Como testar o multiplayer
 

@@ -8,6 +8,7 @@ function responderApi(callable $acao, bool $alterar = true): never
     header('Cache-Control: no-store');
     $conexao = null;
     try {
+        verificarInstalacao();
         if ($alterar) {
             exigirPost();
         } elseif ($_SERVER['REQUEST_METHOD'] !== 'GET') {
@@ -20,8 +21,15 @@ function responderApi(callable $acao, bool $alterar = true): never
         $dados = $acao((int) $jogador['id']);
         echo json_encode($dados, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
     } catch (Throwable $erro) {
-        if ($conexao && $conexao->inTransaction()) {
-            $conexao->rollBack();
+        cancelarTransacao($conexao);
+        if ($erro instanceof PDOException || $erro instanceof ErroConfiguracao) {
+            $diagnostico = diagnosticoErro($erro);
+            http_response_code($diagnostico['http']);
+            error_log('[configuracao] ' . $diagnostico['codigo'] . ': ' . $erro->getMessage());
+            echo json_encode(['erro' => $diagnostico['titulo'] . '. ' . $diagnostico['descricao'],
+                'codigo' => $diagnostico['codigo'], 'configuracao' => true,
+                'url_configuracao' => 'configuracao.php'], JSON_UNESCAPED_UNICODE);
+            exit;
         }
         $inesperado = !($erro instanceof RuntimeException) || $erro instanceof PDOException;
         http_response_code($inesperado ? 500 : 422);
