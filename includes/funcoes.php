@@ -11,6 +11,7 @@ if (function_exists('session_start')) {
     session_start();
 }
 require_once __DIR__ . '/../config/banco.php';
+require_once __DIR__ . '/jogadores.php';
 require_once __DIR__ . '/diagnostico.php';
 
 if (empty($_SESSION['csrf'])) {
@@ -38,10 +39,13 @@ function redirecionar(string $destino): never
 function exigirJogador(): array
 {
     $id = (int) ($_SESSION['jogador_id'] ?? 0);
-    $jogador = consultar('SELECT * FROM jogadores WHERE id = ?', [$id])->fetch();
+    $jogador = buscarJogadorPorId(banco(), $id);
     if (!$jogador) {
         throw new RuntimeException('Informe seu nome na página inicial para continuar.');
     }
+    // Sessões anteriores à unificação continuam acessando o perfil principal.
+    $_SESSION['jogador_id'] = (int) $jogador['id'];
+    $_SESSION['personagem'] = $jogador['personagem'];
     return $jogador;
 }
 
@@ -193,9 +197,16 @@ function estadoSala(int $salaId, int $jogadorId): array
     $outra = 3 - $posicao;
     $oponente = $sala['modo'] === 'bot' ? 'Bot' : 'Aguardando jogador';
     if ($sala['modo'] === 'multiplayer' && $sala['jogador' . $outra . '_id']) {
-        $pessoa = consultar('SELECT nome FROM jogadores WHERE id = ?', [$sala['jogador' . $outra . '_id']])->fetch();
+        $pessoa = consultar('SELECT nome, personagem FROM jogadores WHERE id = ?', [$sala['jogador' . $outra . '_id']])->fetch();
         $oponente = $pessoa['nome'];
     }
+    $meuPersonagem = consultar('SELECT personagem FROM jogadores WHERE id = ?', [$jogadorId])->fetchColumn();
+    $meuPersonagem = in_array($meuPersonagem, ['classico', 'barbudo'], true) ? $meuPersonagem : 'classico';
+    $personagemOponente = $sala['modo'] === 'bot'
+        ? ($meuPersonagem === 'classico' ? 'barbudo' : 'classico')
+        : ($pessoa['personagem'] ?? 'barbudo');
+    $placar = consultar('SELECT COUNT(*) AS numero, SUM(resultado = ?) AS voce, SUM(resultado = ?) AS oponente, SUM(resultado = ?) AS empates FROM rodadas WHERE sala_id = ?',
+        ['jogador' . $posicao, 'jogador' . $outra, 'empate', $salaId])->fetch();
     $finalizada = $rodada['status'] === 'finalizada';
     $resultado = null;
     if ($finalizada) {
@@ -204,6 +215,11 @@ function estadoSala(int $salaId, int $jogadorId): array
     }
     return [
         'sala_status' => $sala['status'], 'modo' => $sala['modo'],
+        'meu_personagem' => $meuPersonagem,
+        'personagem_oponente' => in_array($personagemOponente, ['classico', 'barbudo'], true) ? $personagemOponente : 'classico',
+        'numero_rodada' => (int) $placar['numero'],
+        'placar' => ['voce' => (int) $placar['voce'], 'oponente' => (int) $placar['oponente'], 'empates' => (int) $placar['empates']],
+        'vencedor' => !$finalizada ? null : ($rodada['resultado'] === 'empate' ? 'empate' : ($rodada['resultado'] === 'jogador' . $posicao ? 'voce' : 'oponente')),
         'rodada_id' => (int) $rodada['id'], 'finalizada' => $finalizada,
         'oponente' => $oponente, 'minha_escolha' => $rodada['escolha' . $posicao],
         'oponente_jogou' => $rodada['escolha' . $outra] !== null,

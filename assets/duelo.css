@@ -1,0 +1,259 @@
+.tela-duelo { background: #081e2b; color: #e9f4f8; }
+.tela-duelo .painel-menu { display: none; }
+.tela-duelo .container { width: min(1120px, 100%); max-width: none; min-height: 100svh; margin: 0 auto; padding: 22px 28px 28px; }
+.duelo-cabecalho { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 20px; }
+.duelo-cabecalho .etiqueta { color: #90b2c4; margin: 0 0 8px; }
+.duelo-cabecalho h1 { font-size: clamp(32px, 4vw, 52px); margin: 0; }
+.duelo-cabecalho .voltar-jogo { color: #091a24; font-size: 15px; }
+.tela-duelo .convite-sala { padding: 10px 16px; margin: 0 0 16px; background: #123446; border-left: 3px solid var(--ciano); }
+.tela-duelo .label-codigo { color: #b3cedc; }
+.tela-duelo .codigo { color: var(--ciano); font-size: 24px; }
+.tela-duelo .arena { text-align: center; padding: 0; border: 1px solid #335365; background: #0c2533; }
+.duelo-hud { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding: 15px 22px; border-bottom: 2px solid #35dff380; background: #102f40; }
+.hud-jogador { text-align: left; min-width: 0; }
+.hud-oponente { text-align: right; }
+.hud-jogador > span, .hud-placar > span { color: #95b8cc; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.hud-jogador strong { display: block; margin: 4px 0; font: italic 900 clamp(22px, 2.5vw, 34px)/1 var(--display); text-transform: uppercase; overflow-wrap: anywhere; }
+.hud-jogador small, .hud-placar small { color: #9cc4d5; font-size: 11px; }
+.hud-placar strong { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 2px 0; font: italic 900 36px/1 var(--display); }
+.hud-placar b { color: var(--ciano); min-width: 28px; }
+.hud-placar i { color: #557c92; }
+.palco-duelo { position: relative; isolation: isolate; aspect-ratio: 16 / 8; overflow: hidden; background: #123746 url('duelo/arena.webp') center / cover no-repeat; }
+.lutador { --direcao: 1; position: absolute; bottom: 15%; left: 9%; width: 30%; height: 72%; transform-origin: 50% 95%; }
+.lutador::before { content: ''; position: absolute; width: 55%; height: 5%; left: 22.5%; bottom: -1%; border-radius: 50%; background: #00162188; }
+.lutador img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+.lutador-oponente { --direcao: -1; left: auto; right: 9%; }
+.lutador-oponente img { transform: scaleX(-1); }
+.lutador.ausente { opacity: .25; }
+.jogada-revelada { position: absolute; top: 36%; right: -12%; font: 48px/1 Arial, sans-serif; background: #eefaff; border: 3px solid #35dff3; border-radius: 50%; width: 76px; height: 76px; display: grid; place-items: center; color: #0d2737; box-shadow: 0 5px 0 #031a2e66; }
+.lutador-oponente .jogada-revelada { right: auto; left: -12%; border-color: #ffcb6a; }
+.duelo-anuncio { position: absolute; top: 12%; left: 50%; transform: translateX(-50%); width: 55%; pointer-events: none; text-align: center; text-shadow: 0 2px 8px #00111c; }
+.duelo-anuncio span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .14em; color: #d3f4ff; }
+.duelo-anuncio strong { display: block; font: italic 900 clamp(28px, 5vw, 64px)/1.1 var(--display); text-transform: uppercase; color: #fff; }
+.palco-duelo[data-fase="resultado"] .duelo-anuncio strong { color: var(--ciano); }
+.palco-duelo[data-fase="contagem"] .duelo-anuncio { top: 30%; background: #061c2bcc; padding: 14px; width: auto; min-width: 210px; }
+.palco-duelo[data-fase="ataque"] .duelo-anuncio { opacity: 0; }
+.duelo-faixa { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; gap: 10px; padding: 9px 16px; background: #061b2bcc; color: #a6d1e3; font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
+.duelo-painel { padding: 16px 22px 18px; }
+.tela-duelo .arena #status { background: none; padding: 0; margin: 0 0 5px; font-size: 26px; color: #fff; }
+.duelo-painel #detalhes { margin: 6px 0; color: #acd0df; }
+.duelo-instrucao { color: #8eaebf; font-size: 11px; margin: 6px 0 12px; }
+.tela-duelo .escolhas { gap: 12px; margin: 0 auto; max-width: 580px; }
+.tela-duelo .escolhas button { min-height: 72px; padding: 10px 16px !important; clip-path: none; background: #234556; color: #fff; border: 1px solid #537b8f; display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 22px; }
+.tela-duelo .escolhas button > span { display: inline; font-size: 27px; margin: 0; }
+.tela-duelo .escolhas button.selecionada { background: var(--ciano); color: #071e2b; box-shadow: inset 0 -4px #0da6c0; }
+.tela-duelo .escolhas button:disabled:not(.selecionada) { opacity: .55; }
+.tela-duelo #revanche { margin-top: 14px; }
+.tela-duelo #pedido-revanche { color: #afcedd; margin-bottom: 0; }
+.tela-duelo .acoes { margin-top: 14px; }
+.tela-duelo .acoes button { font-size: 17px; }
+.tela-duelo.aguardando .arena, .tela-duelo .aguardando .arena { display: block; }
+.tela-duelo .aguardando .escolhas { display: none; }
+.atacando { animation: investida .65s ease-out both; }
+.vencedor { animation: comemoracao .7s ease-out 2; }
+.derrotado { transform: translateY(8%) rotate(calc(var(--direcao) * -9deg)); opacity: .65; }
+@keyframes investida { 0%, 100% { transform: translateX(0); } 45% { transform: translateX(calc(var(--direcao) * 16%)) rotate(calc(var(--direcao) * 4deg)); } }
+@keyframes comemoracao { 0%, 100% { transform: translateY(0); } 45% { transform: translateY(-9%); } }
+@media (max-width: 650px) {
+    .tela-duelo .container { padding: 16px 12px 24px; }
+    .duelo-cabecalho { gap: 10px; margin-bottom: 14px; }
+    .duelo-cabecalho h1 { font-size: 30px; }
+    .duelo-cabecalho .voltar-jogo { font-size: 13px; padding: 8px 10px; }
+    .duelo-hud { padding: 12px; gap: 10px; }
+    .hud-jogador strong { font-size: 22px; }
+    .hud-jogador > span, .hud-placar > span { font-size: 8px; letter-spacing: .07em; }
+    .hud-placar strong { font-size: 30px; gap: 6px; }
+    .palco-duelo { aspect-ratio: 4 / 3; }
+    .lutador { left: 4%; width: 38%; height: 66%; }
+    .lutador-oponente { left: auto; right: 4%; }
+    .duelo-anuncio { top: 9%; width: 90%; }
+    .duelo-anuncio strong { font-size: 34px; }
+    .jogada-revelada { width: 48px; height: 48px; font-size: 29px; right: -5%; top: 47%; border-width: 2px; }
+    .lutador-oponente .jogada-revelada { left: -5%; }
+    .duelo-painel { padding: 14px 10px; }
+    .tela-duelo .escolhas { gap: 6px; }
+    .tela-duelo .escolhas button { flex-direction: column; gap: 6px; font-size: 18px; padding: 10px 5px !important; }
+    .duelo-faixa { padding: 8px; font-size: 7px; }
+    .duelo-instrucao { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .atacando, .vencedor { animation: none; } .derrotado { transform: none; } }
+
+/* Arena em tela inteira; interface sobreposta ao cenário. */
+.tela-duelo .fundo-cenario { display: none; }
+.tela-duelo .container { width: 100%; min-height: 100svh; padding: 0; }
+.tela-duelo #jogo { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; }
+.tela-duelo .arena { display: contents !important; }
+.tela-duelo .palco-duelo { position: absolute; inset: 0; z-index: -1; aspect-ratio: auto; min-height: 100%; background-position: center; }
+.tela-duelo .palco-duelo::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(#041421c9, transparent 29%, transparent 65%, #041421d9); }
+.tela-duelo .duelo-cabecalho { margin: 22px 32px 16px; }
+.tela-duelo .duelo-cabecalho h1 { font-size: clamp(28px, 3vw, 42px); text-shadow: 0 2px 4px #001521; }
+.tela-duelo .duelo-cabecalho .voltar-jogo { background: #0b293bd9; border: 1px solid #7097a8; color: #d8eff7; }
+.tela-duelo .convite-sala { position: absolute; right: 200px; top: 22px; z-index: 2; margin: 0; padding: 8px 12px; background: #082536e8; }
+.tela-duelo .convite-sala .codigo { font-size: 20px; }
+.tela-duelo .convite-sala button { min-height: 32px; font-size: 14px; padding: 7px 10px; }
+.tela-duelo .duelo-hud { margin: 0 32px; max-width: 760px; width: calc(100% - 64px); align-self: center; padding: 12px 22px; background: #082333b8; border: 1px solid #7bb9d04d; border-bottom: 2px solid #35dff380; }
+.tela-duelo .duelo-painel { margin-top: auto; padding: 14px 24px 8px; width: 100%; text-align: center; background: linear-gradient(transparent, #041c2cd9); }
+.tela-duelo .acoes { margin: 0; padding: 8px 24px 16px; justify-content: center; background: #041c2cd9; }
+.tela-duelo .acoes button { min-height: 32px; padding: 6px 14px; font-size: 14px; background: #234556 !important; color: #bcdce9; }
+.tela-duelo .acoes button.secundario:is(:hover, :focus-visible):not(:disabled) { background: var(--ciano) !important; color: #071e2b; }
+.tela-duelo .lutador { left: 10%; width: 28%; height: 53%; bottom: 21%; }
+.tela-duelo .lutador-oponente { left: auto; right: 10%; }
+.tela-duelo .duelo-anuncio { top: 32%; }
+.tela-duelo .palco-duelo[data-fase="contagem"] .duelo-anuncio { top: 39%; }
+.tela-duelo .duelo-faixa { bottom: 0; padding: 8px 24px; background: transparent; }
+.tela-duelo .escolhas { max-width: 540px; }
+.tela-duelo .escolhas button { min-height: 60px; background: #12394bed; }
+.tela-duelo .duelo-instrucao { margin: 4px 0 10px; }
+.tela-duelo #pedido-revanche:empty { display: none; }
+@media (max-width: 950px) {
+    .tela-duelo .convite-sala { position: relative; top: auto; right: auto; align-self: center; margin: 0 16px 10px; }
+}
+@media (max-width: 650px) {
+    .tela-duelo .duelo-cabecalho { margin: 14px 14px 12px; }
+    .tela-duelo .duelo-cabecalho h1 { font-size: 28px; }
+    .tela-duelo .duelo-hud { margin: 0 12px; width: calc(100% - 24px); padding: 10px 12px; }
+    .tela-duelo .lutador { left: 1%; width: 43%; height: 40%; bottom: 29%; }
+    .tela-duelo .lutador-oponente { left: auto; right: 1%; }
+    .tela-duelo .duelo-anuncio { top: 29%; width: 90%; }
+    .tela-duelo .duelo-anuncio strong { font-size: 32px; }
+    .tela-duelo .duelo-painel { padding: 12px 12px 6px; }
+    .tela-duelo .arena #status { font-size: 23px; }
+    .tela-duelo .escolhas button { flex-direction: row; gap: 7px; min-height: 54px; font-size: 16px; }
+    .tela-duelo .escolhas button > span { font-size: 24px; }
+    .tela-duelo .acoes { padding-bottom: 22px; }
+    .tela-duelo .convite-sala { padding: 5px 10px; }
+    .tela-duelo .convite-sala .label-codigo { font-size: 8px; margin: 0; }
+    .tela-duelo .convite-sala .codigo { font-size: 17px; }
+}
+@media (max-height: 650px) and (min-width: 651px) {
+    .tela-duelo .duelo-cabecalho { margin: 10px 22px; }
+    .tela-duelo .duelo-cabecalho h1 { font-size: 26px; }
+    .tela-duelo .duelo-hud { padding: 6px 16px; }
+    .tela-duelo .hud-jogador strong { font-size: 24px; }
+    .tela-duelo .hud-placar strong { font-size: 26px; }
+    .tela-duelo .lutador { height: 49%; bottom: 25%; }
+    .tela-duelo .duelo-painel { padding-top: 8px; }
+    .tela-duelo .duelo-instrucao { display: none; }
+    .tela-duelo .escolhas button { min-height: 46px; }
+}
+
+/* Ações dos personagens: seis poses em três colunas e duas linhas. */
+.acao-sequencia { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 100%; aspect-ratio: 1; background-size: 300% 200%; background-position: 0 0; background-repeat: no-repeat; pointer-events: none; }
+.lutador-oponente .acao-sequencia { transform: translateX(-50%) scaleX(-1); }
+.usando-sprites > img { visibility: hidden; }
+.usando-sprites .jogada-revelada { visibility: hidden; }
+.pedra-projetil { position: absolute; z-index: 3; width: clamp(16px, 2.5vw, 32px); aspect-ratio: 1.2; background: linear-gradient(135deg, #c8d4dc 0 28%, #778f9e 29% 58%, #3e5667 59%); clip-path: polygon(18% 0, 72% 5%, 100% 39%, 80% 90%, 30% 100%, 0 65%, 3% 22%); pointer-events: none; animation: pedra-voce .5s linear both; }
+.pedra-oponente { animation-name: pedra-oponente; }
+@keyframes pedra-voce { 0% { left: 28%; top: 53%; transform: rotate(0); } 50% { left: 50%; top: 42%; } 100% { left: 73%; top: 59%; transform: rotate(300deg); } }
+@keyframes pedra-oponente { 0% { left: 70%; top: 53%; transform: rotate(0); } 50% { left: 48%; top: 42%; } 100% { left: 24%; top: 59%; transform: rotate(-300deg); } }
+@media (prefers-reduced-motion: reduce) { .pedra-projetil { display: none; animation: none; } }
+
+/* Idle: 16 poses a 12 FPS, iluminação uniforme e passos menores. */
+.idle-sequencia { position: absolute; bottom: 0; left: 50%; height: 100%; aspect-ratio: 1; transform: translateX(-50%); background-size: 400% 400%; background-position: 0 0; background-repeat: no-repeat; animation: idle-poses 1.333333s steps(1, end) infinite; pointer-events: none; }
+.lutador-oponente .idle-sequencia { transform: translateX(-50%) scaleX(-1); animation-delay: -.4s; }
+.idle-pronto > img { visibility: hidden; }
+.lutador:not(.idle-pronto) .idle-sequencia, .usando-sprites .idle-sequencia { visibility: hidden; }
+.usando-sprites .idle-sequencia, .palco-duelo[data-fase="ataque"] .idle-sequencia, .palco-duelo[data-fase="resultado"] .idle-sequencia, .palco-duelo[data-fase="encerrada"] .idle-sequencia, .palco-duelo[data-pausado="true"] .idle-sequencia { animation-play-state: paused; }
+@keyframes idle-poses {
+    0.0% { background-position: 0.0% 0.0%; }
+    6.25% { background-position: 33.333333% 0.0%; }
+    12.5% { background-position: 66.666667% 0.0%; }
+    18.75% { background-position: 100.0% 0.0%; }
+    25.0% { background-position: 0.0% 33.333333%; }
+    31.25% { background-position: 33.333333% 33.333333%; }
+    37.5% { background-position: 66.666667% 33.333333%; }
+    43.75% { background-position: 100.0% 33.333333%; }
+    50.0% { background-position: 0.0% 66.666667%; }
+    56.25% { background-position: 33.333333% 66.666667%; }
+    62.5% { background-position: 66.666667% 66.666667%; }
+    68.75% { background-position: 100.0% 66.666667%; }
+    75.0% { background-position: 0.0% 100.0%; }
+    81.25% { background-position: 33.333333% 100.0%; }
+    87.5% { background-position: 66.666667% 100.0%; }
+    93.75% { background-position: 100.0% 100.0%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .idle-sequencia { display: none; animation: none; }
+    .idle-pronto > img { visibility: visible; }
+}
+
+/* Froldi: quadros renderizados do rig, câmera e materiais constantes. */
+.idle-sequencia.idle-rig { background-size: 600% 600%; animation: idle-rig-poses 3s steps(1, end) infinite; }
+@keyframes idle-rig-poses {
+    0.0% { background-position: 0% 0%; }
+    2.777778% { background-position: 20% 0%; }
+    5.555556% { background-position: 40% 0%; }
+    8.333333% { background-position: 60% 0%; }
+    11.111111% { background-position: 80% 0%; }
+    13.888889% { background-position: 100% 0%; }
+    16.666667% { background-position: 0% 20%; }
+    19.444444% { background-position: 20% 20%; }
+    22.222222% { background-position: 40% 20%; }
+    25.0% { background-position: 60% 20%; }
+    27.777778% { background-position: 80% 20%; }
+    30.555556% { background-position: 100% 20%; }
+    33.333333% { background-position: 0% 40%; }
+    36.111111% { background-position: 20% 40%; }
+    38.888889% { background-position: 40% 40%; }
+    41.666667% { background-position: 60% 40%; }
+    44.444444% { background-position: 80% 40%; }
+    47.222222% { background-position: 100% 40%; }
+    50.0% { background-position: 0% 60%; }
+    52.777778% { background-position: 20% 60%; }
+    55.555556% { background-position: 40% 60%; }
+    58.333333% { background-position: 60% 60%; }
+    61.111111% { background-position: 80% 60%; }
+    63.888889% { background-position: 100% 60%; }
+    66.666667% { background-position: 0% 80%; }
+    69.444444% { background-position: 20% 80%; }
+    72.222222% { background-position: 40% 80%; }
+    75.0% { background-position: 60% 80%; }
+    77.777778% { background-position: 80% 80%; }
+    80.555556% { background-position: 100% 80%; }
+    83.333333% { background-position: 0% 100%; }
+    86.111111% { background-position: 20% 100%; }
+    88.888889% { background-position: 40% 100%; }
+    91.666667% { background-position: 60% 100%; }
+    94.444444% { background-position: 80% 100%; }
+    97.222222% { background-position: 100% 100%; }
+}
+.palco-duelo[data-fase="ataque"] .idle-rig, .palco-duelo[data-fase="resultado"] .idle-rig, .palco-duelo[data-fase="encerrada"] .idle-rig, .palco-duelo[data-pausado="true"] .idle-rig, .usando-sprites .idle-rig { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .idle-sequencia.idle-rig { animation: none; } }
+
+/* Márcio: flexão curta, descida marcada e retorno rápido; sem deformar a imagem. */
+.idle-sequencia.idle-marcio { background-size: 400% 200%; animation: idle-marcio-poses .9s steps(1, end) infinite; }
+@keyframes idle-marcio-poses {
+    0%, 12.5% { background-position: 0 0; }
+    25% { background-position: 33.333333% 0; }
+    37.5%, 50% { background-position: 66.666667% 0; }
+    62.5% { background-position: 33.333333% 0; }
+    75%, 87.5% { background-position: 0 0; }
+}
+
+.palco-duelo[data-fase="ataque"] .idle-marcio, .palco-duelo[data-fase="resultado"] .idle-marcio, .palco-duelo[data-fase="encerrada"] .idle-marcio, .palco-duelo[data-pausado="true"] .idle-marcio, .usando-sprites .idle-marcio { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .idle-sequencia.idle-marcio { animation: none; } }
+
+/* Froldi segue a cadência curta aprovada para o Márcio, usando três poses. */
+.idle-sequencia.idle-froldi { animation: idle-froldi-poses .9s steps(1, end) infinite; }
+@keyframes idle-froldi-poses {
+    0%, 12.5% { background-position: 0 0; }
+    25% { background-position: 66.666667% 0; }
+    37.5%, 50% { background-position: 0 33.333333%; }
+    62.5% { background-position: 66.666667% 0; }
+    75%, 87.5% { background-position: 0 0; }
+}
+.palco-duelo[data-fase="ataque"] .idle-froldi, .palco-duelo[data-fase="resultado"] .idle-froldi, .palco-duelo[data-fase="encerrada"] .idle-froldi, .palco-duelo[data-pausado="true"] .idle-froldi, .usando-sprites .idle-froldi { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .idle-sequencia.idle-froldi { animation: none; } }
+
+/* Objetos sincronizados com as poses de soltura e corte. */
+.pedra-projetil { animation-duration: .65s; }
+.papel-projetil { position: absolute; z-index: 3; width: clamp(30px, 5vw, 65px); height: clamp(14px, 2.4vw, 30px); background: linear-gradient(160deg, #fff 0 45%, #a6c8df 46% 65%, #e9f4ff 66%); clip-path: polygon(0 0, 100% 32%, 14% 100%, 26% 50%); pointer-events: none; animation: papel-voce .85s ease-out both; }
+.papel-oponente { animation-name: papel-oponente; }
+@keyframes papel-voce { 0% { left: 29%; top: 53%; transform: rotate(-8deg); } 45% { top: 43%; } 100% { left: 73%; top: 50%; transform: rotate(12deg); } }
+@keyframes papel-oponente { 0% { left: 69%; top: 53%; transform: scaleX(-1) rotate(-8deg); } 45% { top: 43%; } 100% { left: 23%; top: 50%; transform: scaleX(-1) rotate(12deg); } }
+.efeito-corte { position: absolute; left: 36%; top: 50%; z-index: 3; width: clamp(28px, 5vw, 64px); height: 36px; pointer-events: none; animation: corte-curto .28s ease-out both; }
+.corte-oponente { left: auto; right: 36%; }
+.efeito-corte::before, .efeito-corte::after { content: ''; position: absolute; inset: 40% 0; background: #e6fbff; clip-path: polygon(0 45%, 100% 0, 70% 65%, 0 100%); transform: rotate(-28deg); }
+.efeito-corte::after { transform: rotate(28deg); }
+@keyframes corte-curto { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .papel-projetil, .efeito-corte { display: none; animation: none; } }

@@ -1,0 +1,39 @@
+{
+  "image": "spritesheet-alinhado.webp",
+  "columns": 3,
+  "rows": 2,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "poses": 6,
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyTimesMs": [
+    0,
+    260,
+    560,
+    960,
+    1320,
+    1560
+  ],
+  "durationMs": 1800,
+  "releaseTimeMs": 960,
+  "loop": false,
+  "alignment": {
+    "reference": "assets/duelo/froldi-idle/spritesheet-v2.webp, frame 0",
+    "scale": 0.9735973597359736,
+    "offsetX": 17.117225903699193,
+    "offsetY": 6.2112211221121925,
+    "anchor": "feet",
+    "sameTransformAllFrames": true,
+    "idleFrames": [
+      0,
+      5
+    ]
+  }
+}

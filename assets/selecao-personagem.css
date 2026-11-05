@@ -1,0 +1,42 @@
+.tela-entrada .container { width: 100%; max-width: 1500px; padding-right: 4vw; }
+.tela-entrada .painel-menu, .tela-entrada .painel-menu::before, .tela-entrada .painel-menu::after { clip-path: polygon(0 0, 40% 0, 32% 100%, 0 100%); }
+.entrada-jogador { display: grid; grid-template-columns: minmax(260px, .8fr) minmax(0, 1.3fr); align-items: center; gap: 7vw; min-height: 85svh; }
+.entrada-identidade .intro { padding-top: 0; }
+.entrada-identidade .intro h1 { font-size: clamp(64px, 6.4vw, 100px); }
+.entrada-dica { font-size: 13px; color: #596873; }
+.entrada-jogar { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.selecao-personagem { margin: 0; padding: 0; border: 0; min-width: 0; color: #fff; }
+.selecao-personagem legend { font: italic 900 clamp(28px, 3vw, 46px)/1.1 var(--display); text-transform: uppercase; }
+.selecao-dica { color: #c4dce4; font-size: 12px; margin: 12px 0 22px; }
+.selecao-opcoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.personagem-opcao { min-width: 0; background: #071b2b75; border: 1px solid #7da6b94d; }
+.personagem-opcao:has(input:checked) { border-color: var(--ciano); box-shadow: 0 0 0 2px var(--ciano), 0 16px 44px #00152155; }
+.personagem-previa { display: block; aspect-ratio: 4 / 5; margin: 0; cursor: pointer; background: radial-gradient(ellipse at 50% 38%, #48647180, #0b243c44); }
+.personagem-imagem { display: block; width: 100%; height: 100%; object-fit: cover; }
+.personagem-seletor { display: block; position: relative; margin: 0; cursor: pointer; }
+.personagem-seletor input { position: absolute; opacity: 0; width: 1px; height: 1px; min-height: 0; }
+.personagem-rotulo { display: flex; gap: 10px; align-items: center; padding: 18px 14px; background: #dce8ed; color: var(--tinta); }
+.personagem-rotulo strong { font: italic 900 clamp(18px, 1.8vw, 27px) var(--display); text-transform: uppercase; letter-spacing: 0; }
+.personagem-marca { margin-left: auto; visibility: hidden; }
+.personagem-seletor input:checked + .personagem-rotulo { background: var(--ciano); }
+.personagem-seletor input:checked + .personagem-rotulo .personagem-marca { visibility: visible; }
+.personagem-seletor input:focus-visible + .personagem-rotulo { outline: 3px solid #fff; outline-offset: 4px; }
+@media (max-width: 1000px) {
+    .tela-entrada .container { width: 100%; padding: 26px 24px 40px; }
+    .entrada-jogador { grid-template-columns: minmax(230px, .8fr) minmax(0, 1fr); gap: 30px; }
+    .tela-entrada .painel-menu { clip-path: polygon(0 0, 44% 0, 44% 100%, 0 100%); }
+    .tela-entrada .painel-menu::before, .tela-entrada .painel-menu::after { clip-path: inherit; }
+    .selecao-opcoes { gap: 12px; }
+    .personagem-rotulo { padding: 16px 8px; gap: 6px; }
+}
+@media (max-width: 650px) {
+    .entrada-jogador { display: flex; flex-direction: column; align-items: stretch; gap: 32px; }
+    .tela-entrada .painel-menu { clip-path: none; background: #eef3f5; }
+    .tela-entrada .painel-menu::before, .tela-entrada .painel-menu::after { display: none; }
+    .entrada-identidade .intro h1 { font-size: 56px; }
+    .entrada-identidade .intro { padding-bottom: 12px; }
+    .entrada-identidade .estreito { width: 100%; }
+    .selecao-personagem { color: var(--tinta); }
+    .selecao-dica { color: #536b7b; }
+    .selecao-opcoes { gap: 14px; }
+}

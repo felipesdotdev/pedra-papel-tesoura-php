@@ -1,0 +1,31 @@
+{
+  "image": "spritesheet.webp",
+  "columns": 3,
+  "rows": 2,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "poses": 6,
+  "sequence": [
+    0,
+    1,
+    2,
+    3,
+    2,
+    3,
+    4,
+    5
+  ],
+  "keyTimesMs": [
+    0,
+    230,
+    460,
+    690,
+    920,
+    1150,
+    1380,
+    1610
+  ],
+  "durationMs": 1840,
+  "releaseTimeMs": null,
+  "loop": false
+}

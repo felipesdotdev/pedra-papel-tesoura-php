@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="../">
+    <title>Verificação das animações 2D</title>
+    <link rel="stylesheet" href="assets/estilo.css">
+    <link rel="stylesheet" href="assets/duelo.css">
+    <style>
+        .relatorio { position: relative; z-index: 10; margin: 20px; padding: 20px; background: #e8f1f5; color: #102b3b; white-space: pre-wrap; overflow-wrap: anywhere; }
+        .teste-cabecalho { padding: 20px; }
+    </style>
+    <script src="assets/duelo.js" defer></script>
+    <script src="tests/duelo-animacoes.js" defer></script>
+</head>
+<body class="tela-duelo">
+    <header class="teste-cabecalho"><h1>Verificação das animações</h1><p>Executa somente no navegador, com estados fictícios. Não acessa as APIs nem altera o banco.</p></header>
+    <section id="jogo">
+        <div class="duelo-hud"><div class="hud-jogador"><strong>Teste A</strong><small id="meu-personagem"></small></div><div class="hud-placar"><span id="numero-rodada"></span><strong><b id="pontos-voce">0</b>:<b id="pontos-oponente">0</b></strong><small id="empates-duelo"></small></div><div class="hud-jogador"><strong>Teste B</strong><small id="outro-personagem"></small></div></div>
+        <div id="palco-duelo" class="palco-duelo" data-fase="pronto" role="img" aria-label="Prévia da animação">
+            <div id="lutador-voce" class="lutador lutador-voce"><img id="sprite-voce" src="assets/duelo/marcio.webp" alt="" width="420" height="560"><span id="gesto-voce" class="jogada-revelada" hidden></span></div>
+            <div id="lutador-oponente" class="lutador lutador-oponente"><img id="sprite-oponente" src="assets/duelo/froldi.webp" alt="" width="420" height="560"><span id="gesto-oponente" class="jogada-revelada" hidden></span></div>
+            <div id="duelo-anuncio" class="duelo-anuncio"><span id="anuncio-legenda"></span><strong id="anuncio-titulo"></strong></div>
+            <div class="duelo-faixa"><span>Teste de sprites</span><span id="fase-duelo"></span></div>
+        </div>
+        <div hidden><h2 id="status"></h2><p id="detalhes"></p><button id="revanche" type="button">Revanche</button><p id="pedido-revanche"></p></div>
+    </section>
+    <pre id="test-results" class="relatorio" role="status">Carregando os atlas…</pre>
+</body>
+</html>

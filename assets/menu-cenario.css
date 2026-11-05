@@ -1,0 +1,20 @@
+/* Cenário exclusivo do menu, atrás do painel branco e das opções. */
+.tela-menu .fundo-cenario {
+    background-color: #123746;
+    background-image:
+        linear-gradient(90deg, #12374680, transparent 55%),
+        linear-gradient(180deg, #12374626, #061b2d70),
+        url('menu/arena-suave.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tela-menu .fundo-cenario::after {
+    background: repeating-linear-gradient(0deg, #031b2414 0 1px, transparent 1px 4px);
+    box-shadow: inset 0 0 150px #00131966;
+}
+
+@media (max-width: 1000px) {
+    .tela-menu .fundo-cenario { background-position: 70% center; }
+}

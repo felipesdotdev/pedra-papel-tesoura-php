@@ -1,0 +1,13 @@
+{
+  "image": "spritesheet.webp",
+  "columns": 4,
+  "rows": 4,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "frames": 16,
+  "fps": 12,
+  "durationMs": 1334,
+  "releaseFrame": 10,
+  "direction": "right",
+  "loop": false
+}

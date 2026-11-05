@@ -14,7 +14,7 @@ function verificarInstalacao(): void
     }
     // LIMIT 0 verifica tabelas, colunas e permissão de leitura sem buscar jogadores.
     $estrutura = [
-        'SELECT id, nome, vitorias, derrotas, empates FROM jogadores LIMIT 0',
+        'SELECT id, nome, nome_chave, jogador_principal_id, vitorias, derrotas, empates FROM jogadores LIMIT 0',
         'SELECT id, codigo, jogador1_id, jogador2_id, modo, status, criada_em FROM salas LIMIT 0',
         'SELECT id, sala_id, escolha1, escolha2, vencedor_id, resultado, status, revanche1, revanche2 FROM rodadas LIMIT 0',
     ];
@@ -57,7 +57,8 @@ function diagnosticoErro(Throwable $erro): array
         'colunas' => ['DB_ESTRUTURA', 'A estrutura do banco está desatualizada',
             'Uma tabela existe, mas falta uma coluna usada por esta versão do jogo.',
             ['Faça um backup dos dados e compare a estrutura das tabelas com banco.sql.',
-             'Adicione ou atualize as colunas que faltam. Importar novamente um CREATE TABLE IF NOT EXISTS não altera tabelas existentes.']],
+             'Adicione ou atualize as colunas que faltam. Importar novamente um CREATE TABLE IF NOT EXISTS não altera tabelas existentes.',
+             'Para atualizar o ranking por nome, execute no terminal: php migrations/002_jogadores_por_nome.php.']],
         'permissao' => ['DB_PERMISSAO', 'Permissão insuficiente no banco',
             'O usuário configurado não tem permissão para uma operação necessária.',
             ['Associe o usuário ao banco no painel da hospedagem.',

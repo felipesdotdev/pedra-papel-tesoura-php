@@ -13,6 +13,7 @@ let consultando = false;
 let falhaConsulta = false;
 let encerrada = false;
 let proximaConsulta;
+const duelo = new Duelo2D(jogo, () => desenhar());
 
 function mostrarErro(mensagem) {
     erro.textContent = mensagem;
@@ -60,6 +61,7 @@ function desenhar() {
         detalhes.textContent = estado.oponente_jogou ? 'Seu adversário já escolheu.' : '';
     }
     detalhes.hidden = !detalhes.textContent;
+    duelo.atualizar(estado);
 }
 
 async function requisicao(caminho, dados) {
@@ -100,7 +102,7 @@ async function atualizarSala() {
 }
 
 async function executar(arquivo, dados = {}) {
-    if (enviando) return;
+    if (enviando || (arquivo === 'revanche' && duelo.animando)) return;
     enviando = true;
     sair.disabled = true;
     clearTimeout(proximaConsulta);

@@ -1,0 +1,15 @@
+{
+  "image": "spritesheet.webp",
+  "columns": 6,
+  "rows": 6,
+  "frames": 36,
+  "frameWidth": 320,
+  "frameHeight": 320,
+  "durationMs": 3000,
+  "fps": 12.0,
+  "source": "assets/personagem/animacoes/personagem-combinado.glb",
+  "animation": "Idle",
+  "lighting": "neutral, exposure 1.25, fixed camera",
+  "loop": true,
+  "normalizedCrop": "One shared alpha bounding box for the whole clip; same crop and scale on every frame."
+}

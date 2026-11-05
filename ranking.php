@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '/includes/funcoes.php';
 try {
-    $jogadores = consultar('SELECT * FROM jogadores WHERE vitorias + derrotas + empates > 0 ORDER BY vitorias DESC, derrotas ASC, empates DESC, id ASC LIMIT 50')->fetchAll();
+    $jogadores = consultar('SELECT * FROM jogadores WHERE jogador_principal_id IS NULL AND vitorias + derrotas + empates > 0 ORDER BY vitorias DESC, derrotas ASC, empates DESC, id ASC LIMIT 50')->fetchAll();
     $meuJogador = !empty($_SESSION['jogador_id'])
-        ? consultar('SELECT nome, vitorias, empates, derrotas FROM jogadores WHERE id = ?', [(int) $_SESSION['jogador_id']])->fetch()
+        ? exigirJogador()
         : null;
 } catch (Throwable $e) { falhaPagina($e); }
 $destino = empty($_SESSION['jogador_id']) ? 'index.php' : 'menu.php';

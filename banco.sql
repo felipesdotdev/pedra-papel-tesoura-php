@@ -4,9 +4,15 @@
 CREATE TABLE IF NOT EXISTS jogadores (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(30) NOT NULL,
+    personagem VARCHAR(20) NOT NULL DEFAULT 'classico',
+    jogador_principal_id INT UNSIGNED NULL,
+    nome_chave VARCHAR(90) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin
+        GENERATED ALWAYS AS (CASE WHEN jogador_principal_id IS NULL THEN LOWER(TRIM(nome)) ELSE NULL END) STORED,
     vitorias INT UNSIGNED NOT NULL DEFAULT 0,
     derrotas INT UNSIGNED NOT NULL DEFAULT 0,
-    empates INT UNSIGNED NOT NULL DEFAULT 0
+    empates INT UNSIGNED NOT NULL DEFAULT 0,
+    UNIQUE KEY jogadores_nome_chave (nome_chave),
+    CONSTRAINT jogadores_principal_fk FOREIGN KEY (jogador_principal_id) REFERENCES jogadores(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS salas (

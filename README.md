@@ -32,6 +32,15 @@ Também é possível colocar a pasta no diretório público do XAMPP/Laragon ou 
 
 As variáveis de ambiente `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` e `DB_PASS` também são aceitas. A configuração local tem prioridade.
 
+### Atualização do ranking por nome
+
+Em bancos de uma versão anterior, faça backup e execute `php migrations/002_jogadores_por_nome.php` sem partidas em andamento. A migração exige permissão de alterar a estrutura da tabela. Em instalações novas, importe o `banco.sql` atualizado.
+
+A migração reúne as estatísticas dos nomes equivalentes no perfil de menor ID e atualiza os participantes das salas e os vencedores das rodadas. Os IDs antigos permanecem como referências ao perfil principal, com os contadores zerados, para que sessões antigas continuem funcionando. O histórico não é apagado. Salas antigas entre dois IDs do mesmo nome são encerradas, pois agora representam um só jogador. Reexecutar a migração não soma os pontos outra vez.
+
+Para verificar a entrada por nome, o acúmulo de pontos e a migração, execute `php tests/ranking.php`. O teste usa tabelas com prefixo aleatório e as remove ao terminar; o usuário precisa de permissão para criar e remover essas tabelas. Os registros do jogo não são usados como dados de teste.
+
+
 ## Configuração e diagnóstico no deploy
 
 A página inicial verifica extensões, sessão, conexão, tabelas e colunas antes de exibir o jogo. Se algo estiver faltando, apresenta a causa e instruções específicas. Também é possível abrir `configuracao.php` diretamente para verificar novamente; com a instalação correta, ela mostra a confirmação.
@@ -101,8 +110,8 @@ Para jogar em dois dispositivos na mesma rede, inicie com `php -S 0.0.0.0:8000` 
 - Uma revanche multiplayer só começa quando os dois pedem. Contra o bot, começa imediatamente.
 - **Sair da sala** encerra a sala para os dois. Rodadas incompletas não geram pontos. Resultados já concluídos continuam valendo.
 - Fechar a aba ou perder a conexão não encerra a sala automaticamente. Como não há timer, o outro jogador pode aguardar, recarregar a página ou sair pelo botão.
-- Não existe autenticação. O jogador é identificado pelo ID guardado na sessão PHP. Nomes repetidos são permitidos e diferenciados por `#ID`. Uma nova sessão não recupera um jogador antigo só pelo nome.
-- Trocar de nome na página inicial cria outro jogador; os registros antigos permanecem no banco.
+- O nome identifica o perfil, sem diferenciar maiúsculas e minúsculas e ignorando espaços nas pontas: `luis`, `Luis` e `LUIS` recuperam o mesmo jogador e suas estatísticas. Acentos continuam distintos: `Luis` e `Luís` são nomes diferentes. O banco usa uma chave normalizada com índice UNIQUE; o ID desse perfil fica na sessão PHP.
+- Ao entrar novamente com um nome existente, o sistema mantém os pontos e atualiza o personagem escolhido. Um nome ainda não cadastrado cria outro perfil. Como o projeto não usa senha, qualquer pessoa que informe o mesmo nome acessa esse perfil.
 
 ## Organização
 
@@ -141,3 +150,43 @@ O endpoint de polling apenas lê dados. Ele nunca soma pontos. As consultas usam
 - Saia durante uma rodada incompleta: o ranking não deve mudar.
 - Jogue contra o bot e confira que o ranking não mudou.
 - Tente enviar uma escolha inválida ou repetir uma jogada: a API deve recusar.
+
+## Seleção de personagem
+
+A entrada oferece imagens dos personagens Froldi e Márcio. A opção é salva em `jogadores.personagem` e na sessão. Clique na imagem ou no nome para selecionar; o teclado também funciona com os botões de rádio. A tela inicial não carrega modelos 3D, WebGL ou a biblioteca model-viewer, para reduzir o uso de processador e memória.
+
+Em bancos existentes, execute uma vez `migrations/001_personagem.sql` antes de usar a nova entrada. Instalações novas já recebem a coluna por `banco.sql`. A arena usa essa escolha para exibir o personagem de cada jogador.
+
+## Duelo 2D
+
+A sala usa um cenário low poly em tela inteira, com profundidade ilustrada, personagens transparentes, placar por sala e controles sobrepostos. O personagem vem de `jogadores.personagem`; no treino, o bot usa o outro personagem. Os dois jogadores podem escolher o mesmo personagem.
+
+Quando as duas escolhas chegam ao servidor, a interface apresenta a contagem, revela as jogadas e reproduz movimentos 2D curtos de investida, vitória e derrota. Recarregar uma rodada concluída mostra diretamente o resultado. A preferência de movimento reduzido elimina a contagem animada. O placar é calculado a partir das rodadas concluídas e não modifica as regras do ranking; treino continua sem pontuar no ranking.
+
+A partida anima sprites com CSS, sem WebGL ou renderização 3D em tempo real. Os arquivos editáveis do rig e suas animações continuam preservados. As imagens usadas estão em `assets/duelo/`, junto dos PNGs originais e dos prompts usados na ferramenta integrada `image_gen`. O cenário e as duas imagens estáticas dos personagens somam aproximadamente 82 KB; os atlas de animação são carregados à parte.
+
+### Ações do Froldi e do Márcio
+
+Os dois personagens usam seis poses por ação, em folhas de sprites transparentes com três colunas e duas linhas. Os arquivos ficam em `assets/duelo/froldi-acoes/` e `assets/duelo/marcio-acoes/`, separados em `pedra`, `papel` e `tesoura`. Cada pasta contém o WebP de 960 × 640, o PNG original, o prompt de geração e um `atlas.json` com os tempos e a sequência. Cada quadro mede 320 × 320.
+
+O Froldi carrega a versão `spritesheet-alinhado.webp` de cada ação; o Márcio carrega `spritesheet.webp`. A seleção desses arquivos fica em `assets/duelo.js`.
+
+Pedra e Papel passam por preparação, arremesso e recuperação. A pedra ou o avião de papel começa a voar aos 960 ms da ação, em uma camada CSS separada. Tesoura repete as poses de lâminas abertas e fechadas, com efeitos de corte aos 690 e 1150 ms. O JavaScript escolhe o atlas pelo personagem e pela jogada; o CSS espelha as poses do adversário. Quando o resultado aparece ou a rodada muda, as poses e os efeitos são removidos. Se um atlas ainda não carregou, a interface usa a investida simples como alternativa. Com movimento reduzido, mostra o resultado diretamente.
+
+A versão anterior do arremesso do Froldi, com 16 poses, permanece em `assets/duelo/froldi-pedra/` como histórico; a partida usa os seis quadros de `froldi-acoes/pedra/`.
+
+Para verificar o carregamento dos atlas, as combinações de personagens e jogadas, o espelhamento, a sincronização dos objetos, o cancelamento e o movimento reduzido, abra `http://localhost:8000/tests/duelo-animacoes.html`. A página usa estados fictícios, sem chamar a API ou alterar o banco, e mostra o resultado das verificações.
+
+### Idle do Froldi e do Márcio
+
+Froldi usa três poses selecionadas dos sprites gerados, com cadência marcada de 0,9 segundo, em `assets/duelo/froldi-idle/spritesheet-v2.webp`. Márcio usa as três primeiras poses do atlas `assets/duelo/marcio-idle/spritesheet.webp`, com flexão curta dos joelhos e cadência marcada de 0,9 segundo, sem escala animada. Os loops pausam durante ataques e resultados e quando a aba está oculta. A preferência de movimento reduzido exibe as imagens estáticas. A seleção inicial continua estática. A exportação experimental do rig do Froldi fica preservada em `assets/duelo/froldi-idle/rig/`, mas não é carregada pela partida.
+
+### Alinhamento das ações do Froldi
+
+As três ações do Froldi usam `assets/duelo/froldi-acoes/{pedra,papel,tesoura}/spritesheet-alinhado.webp`. A escala é calculada em relação à pose neutra do idle e aplicada uma única vez, igualmente a todos os quadros da mesma ação, com ancoragem nos pés. Os PNGs e atlas anteriores permanecem preservados. `atlas.json` registra a escala e o deslocamento usados. O primeiro e o último quadro da sequência exibida reaproveitam diretamente o quadro de idle que estava na tela, com o mesmo tamanho e posição, evitando saltos na entrada e na saída do ataque.
+
+### Vitória e derrota
+
+Froldi e Márcio têm seis poses de vitória e seis de derrota em `assets/duelo/froldi-resultados/{vitoria,derrota}/` e `assets/duelo/marcio-resultados/{vitoria,derrota}/`. Cada pasta preserva o PNG original, o WebP alinhado, o prompt usado no `image_gen` e os metadados em `atlas.json`.
+
+As poses avançam aos 0, 300, 600, 950, 1300 e 1700 ms, uma vez por resultado, e seguram o quadro final até a próxima rodada. Vitória levanta os punhos em comemoração; derrota ajoelha e baixa a cabeça. A primeira pose reaproveita o quadro de idle que estava na tela, com a grade correta de cada personagem. A escala e a ancoragem dos pés são fixas em toda a sequência. Empates não acionam vitória ou derrota. Recarregar uma rodada concluída ou usar movimento reduzido mostra a pose final diretamente. Iniciar revanche ou encerrar a sala cancela os quadros pendentes e remove as poses anteriores.
