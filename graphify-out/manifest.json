@@ -1,0 +1,174 @@
+{
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\banco.sql": {
+    "mtime": 1793887498.659211,
+    "hash": "7125b913986441c9537dabc03e0a2c59"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\criar_sala.php": {
+    "mtime": 1793887498.6631858,
+    "hash": "433e39c627a4b2bb41de3dd3ec2de00c"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\entrar_sala.php": {
+    "mtime": 1793888545.7053194,
+    "hash": "725541d96b645834c6b8919604227007"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\index.php": {
+    "mtime": 1793888545.704319,
+    "hash": "605f8b53b2e3348cb0c39c29d9bca81f"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\menu.php": {
+    "mtime": 1793888546.192087,
+    "hash": "dd87f34f8c1d96e607474cc7790c21a7"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\personagem.php": {
+    "mtime": 1793888336.6550586,
+    "hash": "210a96d63bc64dc7045550fbdebd3c57"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\ranking.php": {
+    "mtime": 1793889908.8593073,
+    "hash": "1a60824df51ff19ad30b1c220d7dc8af"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\sala.php": {
+    "mtime": 1793888979.6562915,
+    "hash": "01ad2811c789c032f2a2b98b34e3d48f"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\base.php": {
+    "mtime": 1793887650.220034,
+    "hash": "b7686cf6cd98c011c9b4d68e36a80d9d"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\estado_sala.php": {
+    "mtime": 1793887571.3031816,
+    "hash": "d5c9010b24306457b3fe499f5746f167"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\jogar.php": {
+    "mtime": 1793887571.3041837,
+    "hash": "430a5071bc445d7d094ae1a9f76737db"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\revanche.php": {
+    "mtime": 1793887571.3051815,
+    "hash": "9784dd624bb2b58c4992e9e494f7c0de"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\sair_sala.php": {
+    "mtime": 1793887571.306181,
+    "hash": "b1a84a7b0b4a8da045c870108fc8848d"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\jogo.js": {
+    "mtime": 1793887650.2220137,
+    "hash": "a56b798ca677eed2c779b1a09ed1d5b6"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\menu.js": {
+    "mtime": 1793888715.4073215,
+    "hash": "a6a2949fc6b02169b5a4c3177ba2e23a"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\personagem.js": {
+    "mtime": 1793888452.8236294,
+    "hash": "4fafa6ad6386adcfac27889c755d1484"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\vendor\\model-viewer.min.js": {
+    "mtime": 1793888275.760878,
+    "hash": "ceb0a122a31ea2b8dfd07daa46d16455"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\config\\banco.local.exemplo.php": {
+    "mtime": 1793887498.6571882,
+    "hash": "27bc61fa602843989b590b5754926b09"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\config\\banco.local.php": {
+    "mtime": 1793888175.341918,
+    "hash": "3c9e1ca3010cca655219e177819aa84b"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\config\\banco.php": {
+    "mtime": 1793887498.6561854,
+    "hash": "a9a10af5915bea401396b5efd3a38c79"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\funcoes.php": {
+    "mtime": 1793890019.625862,
+    "hash": "db0b8a8b96eaeec8acc49117250424ea"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\personagem.php": {
+    "mtime": 1793889363.1882017,
+    "hash": "dae27f8d039158f559cdda469b940880"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\criar_pack.py": {
+    "mtime": 1793890087.9222603,
+    "hash": "047483f6583058a882f03d79626907e3"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\aproximar_foto.py": {
+    "mtime": 1793888973.364545,
+    "hash": "5de1bfe2225dc7cad043a753d85b96c8"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\criar_personagem.py": {
+    "mtime": 1793888026.871381,
+    "hash": "8ad6a558023aab4ac51068f4b07222ec"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\finalizar_personagem.py": {
+    "mtime": 1793889343.6284652,
+    "hash": "d11de12decac4597f20ec9530834b5cd"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\reconstruir_referencia.py": {
+    "mtime": 1793888959.4897664,
+    "hash": "4e32ef4c5a6f3e67a6912539d5a58429"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\refinar_personagem.py": {
+    "mtime": 1793888267.5866227,
+    "hash": "728fca940519be6df6ca8e3d40d92717"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\README.md": {
+    "mtime": 1793889988.889161,
+    "hash": "62bf317cda6bf8da5cba44ec5e130c19"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\fonts\\OFL.txt": {
+    "mtime": 1793888445.7822187,
+    "hash": "46cbde1f44ff31807ec209f1b72acad2"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\vendor\\README.md": {
+    "mtime": 1793888336.659056,
+    "hash": "7f3855e275dee6865357da8db6a77f38"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\referencias\\README.md": {
+    "mtime": 1793890062.2630682,
+    "hash": "0cde291d6af90800164c8db07ed1edc5"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\personagem\\poster.png": {
+    "mtime": 1793889362.9795315,
+    "hash": "23898f78d5c399323a30fdd93e0322f1"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\antes_foto_poster.png": {
+    "mtime": 1793888125.005032,
+    "hash": "23898f78d5c399323a30fdd93e0322f1"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem.png": {
+    "mtime": 1793888125.005032,
+    "hash": "23898f78d5c399323a30fdd93e0322f1"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem_final.png": {
+    "mtime": 1793889272.5589652,
+    "hash": "8c2a240734ff297dc0bf38d05fb41ba6"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem_foto.png": {
+    "mtime": 1793889107.347138,
+    "hash": "a23f135c43c50f751c466075bc558288"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\web-foto.png": {
+    "mtime": 1793889209.4245374,
+    "hash": "a1a10bb7afcdf8cb8fa38bbaaa33bbc9"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\web-preview.png": {
+    "mtime": 1793888475.5640697,
+    "hash": "707ae1f32d670d6687f9a3bb0f6aed29"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\web-restaurado.png": {
+    "mtime": 1793889383.9556842,
+    "hash": "b0bc4d5c9783e0697c08bfd0b8d28f5c"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\referencias\\codex-clipboard-0b913fcb-0f27-45a9-9650-2f09dbb60a57.png": {
+    "mtime": 1793888752.6736622,
+    "hash": "95ccaf85a510fc3178034126ebfe31bc"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\referencias\\codex-clipboard-78ffdffe-2512-42af-abbc-bc21782b9096.png": {
+    "mtime": 1793887637.4186978,
+    "hash": "88fc709ee7f18d07fb111a01ae7c46d1"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\referencias\\codex-clipboard-d9c74af4-7207-4db1-9678-0868985acda4.png": {
+    "mtime": 1793888428.4938467,
+    "hash": "88fc709ee7f18d07fb111a01ae7c46d1"
+  }
+}

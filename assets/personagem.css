@@ -1,0 +1,16 @@
+.personagem { overflow: hidden; border: 1px solid #dce1d9; border-radius: 18px; background: #fff; }
+.personagem__palco { position: relative; height: clamp(380px, 65vh, 720px); background: radial-gradient(ellipse at 50% 35%, #dbd9dc, #aaa7af); }
+.personagem__modelo { display: block; position: absolute; inset: 0; width: 100%; height: 100%; --progress-bar-color: #2d6148; --progress-bar-height: 3px; }
+.personagem__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.personagem[data-estado="pronto"] .personagem__poster { visibility: hidden; }
+.personagem:not([data-estado="pronto"]) .personagem__modelo { opacity: 0; pointer-events: none; }
+.personagem__barra { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; padding: 18px 22px; }
+.personagem__status { margin: 0; font-size: .88rem; }
+.personagem__controles { display: flex; flex-wrap: wrap; gap: 8px; }
+.personagem__controles button { touch-action: manipulation; }
+.personagem__aviso { padding: 0 22px 16px; margin: 0; font-size: .88rem; }
+@media (max-width: 620px) {
+    .personagem__barra { padding: 16px; }
+    .personagem__controles { width: 100%; }
+    .personagem__controles button { flex: 1; padding: 10px; font-size: .85rem; }
+}
