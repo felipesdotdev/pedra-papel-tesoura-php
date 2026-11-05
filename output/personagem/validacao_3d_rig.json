@@ -1,0 +1,39 @@
+{
+  "scene": "Personagem 3D • materiais sólidos e rig.006",
+  "armature": "RIG • Personagem.005",
+  "bones": 54,
+  "meshes": 56,
+  "polygons": 1544,
+  "image_texture_nodes": 0,
+  "unweighted_vertices": 0,
+  "missing_bones": [],
+  "pose_displacement_units": {
+    "Cabeça • volume": 0.6537237276091731,
+    "Mão.R • palma": 0.37988682575606575,
+    "Dedo.R • index": 0.46715864025399895,
+    "Calça.L • joelho": 0.12193059575814251
+  },
+  "blink_values_at_closed": {
+    "Piscar.R • pálpebra móvel.005": 1.0,
+    "Piscar.L • pálpebra móvel.005": 1.0
+  },
+  "views": [
+    {
+      "label": "Referencia",
+      "path": "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\vista_referencia_3d.png"
+    },
+    {
+      "label": "Frente",
+      "path": "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\vista_frente_3d.png"
+    },
+    {
+      "label": "Perfil",
+      "path": "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\vista_perfil_3d.png"
+    },
+    {
+      "label": "Costas",
+      "path": "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\vista_costas_3d.png"
+    }
+  ],
+  "rest_pose_restored": true
+}

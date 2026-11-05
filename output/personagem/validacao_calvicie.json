@@ -1,0 +1,18 @@
+{
+  "scene": "Personagem 3D • materiais sólidos e rig.006",
+  "changed_existing_objects": [
+    "Cabelo • touca, têmporas e nuca.005",
+    "Cabeça • volume e órbitas.005 (couro cabeludo)"
+  ],
+  "unchanged_objects_verified": 66,
+  "approved_face_vertices_preserved": 183,
+  "hair_faces": 140,
+  "sparse_hairs": 271,
+  "rig_bones": 54,
+  "image_texture_nodes": 0,
+  "head_rig_displacement": {
+    "Cabeça • volume e órbitas.005": 0.6143776122893883,
+    "Cabelo • touca, têmporas e nuca.005": 0.6159929875511733,
+    "Cabelo • fios curtos no topo": 0.6175756008531222
+  }
+}

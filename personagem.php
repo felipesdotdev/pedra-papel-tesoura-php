@@ -18,8 +18,8 @@ declare(strict_types=1);
     </header>
     <section class="intro">
         <p class="etiqueta">DO BLENDER PARA O NAVEGADOR</p>
-        <h1>Seu personagem, em 3D.</h1>
-        <p>Arraste para girar e use a roda do mouse ou dois dedos para aproximar. Você também pode usar os controles abaixo.</p>
+        <h1>Seu personagem em movimento.</h1>
+        <p>Escolha pedra, papel ou tesoura para ver cada gesto. Arraste para girar e use a câmera lenta para acompanhar os movimentos.</p>
     </section>
     <?php require __DIR__ . '/includes/personagem.php'; ?>
     <footer>Personagem low poly · Visualização interativa</footer>

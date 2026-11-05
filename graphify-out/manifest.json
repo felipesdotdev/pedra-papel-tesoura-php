@@ -64,8 +64,8 @@
     "hash": "a6a2949fc6b02169b5a4c3177ba2e23a"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\personagem-animado.js": {
-    "mtime": 1793891850.769425,
-    "hash": "d244a0674c5b83c6c5d3127a3fc8183f"
+    "mtime": 1793892657.1796162,
+    "hash": "14c2ee1e5d26b77daf9d1a01ec6dc2a1"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\personagem.js": {
     "mtime": 1793888452.8236294,
@@ -96,8 +96,8 @@
     "hash": "8fc51c73742afb44520111a29f495eb8"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\personagem.php": {
-    "mtime": 1793892573.893149,
-    "hash": "3d8f26634ac04c925da7b0a0a72d2131"
+    "mtime": 1793892657.177637,
+    "hash": "110597ccccd136b8ebf9d71b68aec899"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\tela-configuracao.php": {
     "mtime": 1793892115.6560462,
@@ -128,8 +128,8 @@
     "hash": "efa53eb3fb6fea16a590dac2fbe5f547"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\ajustar_calvicie.py": {
-    "mtime": 1793892570.1803186,
-    "hash": "149706b9d79bc00d0d1646ca5ed0dd3a"
+    "mtime": 1793892839.6524897,
+    "hash": "f03713035bbfb338a120561be26949a4"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\aproximar_foto.py": {
     "mtime": 1793888973.364545,
@@ -159,6 +159,10 @@
     "mtime": 1793891622.104725,
     "hash": "01c79c7380e8bfe1a1ad5be2d7954767"
   },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\salvar_calvicie.py": {
+    "mtime": 1793893115.4526732,
+    "hash": "a1430aec124358f131f543bad4aca756"
+  },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\verificar_3d_rig.py": {
     "mtime": 1793891381.5300727,
     "hash": "fad5faef7e68849c94feddc1bb159083"
@@ -180,8 +184,8 @@
     "hash": "7f3855e275dee6865357da8db6a77f38"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\LEIA-ME.md": {
-    "mtime": 1793892205.8318636,
-    "hash": "cbafce2bc972ced5f8746cd3e7658674"
+    "mtime": 1793892603.8722186,
+    "hash": "fcb961a40343e47e51750ddcdfff2b41"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\referencias\\README.md": {
     "mtime": 1793890062.2630682,
@@ -371,21 +375,41 @@
     "mtime": 1793890821.4434092,
     "hash": "e1b3a6fc011dbc5f32d087682e16803f"
   },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\web-combinado.png": {
+    "mtime": 1793892850.8879387,
+    "hash": "d2308d16c0bf912693073de977067930"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\web-tesoura-combinado.png": {
+    "mtime": 1793892808.8819976,
+    "hash": "fd87a6786f4b5b8b7cccf8e20a0050f5"
+  },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\antes_foto_poster.png": {
     "mtime": 1793888125.005032,
     "hash": "23898f78d5c399323a30fdd93e0322f1"
   },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\calvicie_antes_depois.png": {
+    "mtime": 1793893033.9793193,
+    "hash": "23776079f0d39762dc8dfdbf7aaecfc2"
+  },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\calvicie_detalhe.png": {
-    "mtime": 1793892582.5449066,
-    "hash": "4c7672d8aa731e32fdfcf0898cf3c8e9"
+    "mtime": 1793892853.2067153,
+    "hash": "437c596349a589bd5a5f3106d06e618d"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\calvicie_perfil.png": {
+    "mtime": 1793892925.2124047,
+    "hash": "e73f2d01085ecead9d700bb079238ff5"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\calvicie_previa.png": {
-    "mtime": 1793892576.1802576,
-    "hash": "e1b3b78a8930811bdf3841ea69aacd91"
+    "mtime": 1793892846.2582932,
+    "hash": "edace02ea17e3381efa47035092ca091"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem.png": {
     "mtime": 1793888125.005032,
     "hash": "23898f78d5c399323a30fdd93e0322f1"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem_3d_calvicie.png": {
+    "mtime": 1793892963.4854505,
+    "hash": "2bb5e5606b4f14eb7301db870f28d810"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem_3d_sem_textura.png": {
     "mtime": 1793891559.6163368,

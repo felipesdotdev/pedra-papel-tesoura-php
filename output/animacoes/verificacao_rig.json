@@ -1,0 +1,26 @@
+[
+  {
+    "clip": "Idle",
+    "max_hand_target_error_m": 0.0,
+    "max_foot_target_error_m": 0.0,
+    "lowest_sole_z_m": 0.005
+  },
+  {
+    "clip": "Pedra",
+    "max_hand_target_error_m": 0.00104,
+    "max_foot_target_error_m": 7e-05,
+    "lowest_sole_z_m": -0.00667
+  },
+  {
+    "clip": "Papel",
+    "max_hand_target_error_m": 0.0,
+    "max_foot_target_error_m": 7e-05,
+    "lowest_sole_z_m": -0.00878
+  },
+  {
+    "clip": "Tesoura",
+    "max_hand_target_error_m": 0.0,
+    "max_foot_target_error_m": 9e-05,
+    "lowest_sole_z_m": -0.01052
+  }
+]
