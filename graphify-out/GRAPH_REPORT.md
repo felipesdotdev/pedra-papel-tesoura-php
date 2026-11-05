@@ -1,12 +1,12 @@
 # Graph Report - pedra-papel-tesoura-php  (2026-11-05)
 
 ## Corpus Check
-- 28 files · ~545,946 words
+- 30 files · ~570,253 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2376 nodes · 5561 edges · 28 communities detected
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.8)
+- 2418 nodes · 5627 edges · 28 communities detected
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -63,19 +63,19 @@
 - `alterarRodada()` --calls--> `obterSala()`  [INFERRED]
   api\base.php → includes\funcoes.php
 
-## Communities (45 total, 2 thin omitted)
+## Communities (45 total, 3 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.02
-Nodes (24): aa, FS(), getPoint(), Gr, gs, Ia, iu(), jd() (+16 more)
+Cohesion: 0.01
+Nodes (22): aa, getPoint(), Gr, gs, hn(), Ia, Js(), Ka() (+14 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.01
-Nodes (110): ac, ah(), Bh(), bo, bu, c(), cb(), cc (+102 more)
+Cohesion: 0.02
+Nodes (19): E_, et, fc, Fg, fy, hd(), jd(), jm (+11 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.01
-Nodes (14): $a, bg, Dp, $h(), hn(), hy, ix, ml() (+6 more)
+Cohesion: 0.02
+Nodes (108): _(), ac, ah(), b(), Bh(), bu, c(), cb() (+100 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.01
@@ -83,85 +83,81 @@ Nodes (5): fn, On, ul, un(), vn
 
 ### Community 4 - "Community 4"
 Cohesion: 0.02
-Nodes (8): E_, fc, fy, hd(), Kv, mh(), pb(), Tv
+Nodes (27): An(), bm(), Cm, Dm, eA(), Em, Fm, g_() (+19 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.03
-Nodes (21): ap, ay, Cp, dl, Ep, gc, hl, hp (+13 more)
+Cohesion: 0.02
+Nodes (21): ag, ay, Cp, eg, Ep, hg(), hl, hp (+13 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.02
-Nodes (21): _(), b(), bd(), bn, d(), fd(), Fg, it (+13 more)
+Nodes (21): bc, copy(), cv, da, dc, dl, eo, gl() (+13 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.03
-Nodes (25): An(), bm(), Cm, Dm, eA(), Em, Fm, g_() (+17 more)
+Nodes (31): ao, bo, Co(), Do(), fo, fromJSON(), getPointAt(), getTangent() (+23 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.02
-Nodes (21): bc, copy(), da, dc, eo, gl(), hc, kl (+13 more)
+Cohesion: 0.04
+Nodes (9): db(), hy, If, iu(), Mc, Sf, Tc, $v() (+1 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.03
-Nodes (20): al(), dn(), el, Er(), es(), Ga, id(), il (+12 more)
+Nodes (13): $a, ap, bg, Bx, Dp, Pg, td(), tr (+5 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.04
-Nodes (5): If, Mc, mf, Sf, Tc
-
-### Community 11 - "Community 11"
 Cohesion: 0.03
-Nodes (9): bind(), ct(), fromJSON(), getValue(), ny, ox, vo, wc (+1 more)
+Nodes (10): bind(), dn(), Er(), getValue(), Ln, pn(), Ql, Sr (+2 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.03
-Nodes (13): CE, dt, Gm(), jv, qd(), rf(), s(), $v() (+5 more)
+Cohesion: 0.04
+Nodes (12): CE, dt, ey(), Gm(), Hm, iy, jv, qd() (+4 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.05
-Nodes (13): cs, DS, hs, IS(), Ks, lc, nc, ns() (+5 more)
+Nodes (43): bind(), control(), curve(), hoop(), merge(), mesh(), path(), q() (+35 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.05
-Nodes (6): et, pc, qm, sn, Zb, zf
+Nodes (14): cs, DS, hs, IS(), Ks, lc, nc, ns() (+6 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.05
-Nodes (7): ag, eg, hg(), Ja, $p(), Pg, Xa
+Nodes (4): bd(), bn, ml(), zn
 
 ### Community 16 - "Community 16"
-Cohesion: 0.08
-Nodes (5): af, Bx, td(), Wf, Yx
+Cohesion: 0.06
+Nodes (7): al(), el, es(), il, Km(), _l, np()
 
 ### Community 17 - "Community 17"
-Cohesion: 0.1
-Nodes (3): ao, getPointAt(), _o
+Cohesion: 0.08
+Nodes (4): af, d(), mf, Wf
 
 ### Community 18 - "Community 18"
 Cohesion: 0.18
 Nodes (17): alterarRodada(), responderApi(), banco(), campoCsrf(), compararEscolhas(), consultar(), criarSala(), escapar() (+9 more)
 
-### Community 20 - "Community 20"
-Cohesion: 0.15
-Nodes (12): bind(), control(), curve(), hoop(), merge(), mesh(), path(), q() (+4 more)
+### Community 19 - "Community 19"
+Cohesion: 0.1
+Nodes (3): FS(), Gy, SE()
 
-### Community 21 - "Community 21"
+### Community 20 - "Community 20"
 Cohesion: 0.11
 Nodes (4): bl, Fp, vl, xl
 
-### Community 22 - "Community 22"
+### Community 21 - "Community 21"
 Cohesion: 0.2
 Nodes (11): inside(), linear(), mat(), mesh(), Camera-calibrated volumetric reconstruction of the supplied reference. The face, ribbon(), sample_face(), sampled() (+3 more)
 
-### Community 23 - "Community 23"
+### Community 22 - "Community 22"
 Cohesion: 0.2
 Nodes (12): aim(), area(), box(), linear(), loft(), material(), mesh(), palette() (+4 more)
 
-### Community 25 - "Community 25"
+### Community 23 - "Community 23"
 Cohesion: 0.19
 Nodes (5): mesh(), patch(), point(), Derive the web character from its original scene; preserve all existing scenes., tube()
 
-### Community 26 - "Community 26"
+### Community 25 - "Community 25"
 Cohesion: 0.8
 Nodes (5): atualizarSala(), desenhar(), executar(), mostrarErro(), requisicao()
 
@@ -170,24 +166,24 @@ Cohesion: 0.47
 Nodes (3): patch(), point(), replace()
 
 ## Knowledge Gaps
-- **5 isolated node(s):** `Yv`, `Build an isolated, editable IK character rig and a portable RPS animation pack.`, `Derive the web character from its original scene; preserve all existing scenes.`, `Character sculpted from the supplied single-view low-poly reference. Run inside`, `Camera-calibrated volumetric reconstruction of the supplied reference. The face`
+- **7 isolated node(s):** `Yv`, `Build an isolated, editable IK character rig and a portable RPS animation pack.`, `Build an isolated, editable IK character rig and a portable RPS animation pack.`, `Derive the web character from its original scene; preserve all existing scenes.`, `Character sculpted from the supplied single-view low-poly reference. Run inside` (+2 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `E_` connect `Community 4` to `Community 0`, `Community 1`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 10`, `Community 12`, `Community 14`, `Community 24`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
-- **Why does `fn` connect `Community 3` to `Community 0`, `Community 1`, `Community 4`, `Community 7`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `ix` connect `Community 2` to `Community 1`, `Community 12`, `Community 14`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
-- **What connects `Yv`, `Build an isolated, editable IK character rig and a portable RPS animation pack.`, `Derive the web character from its original scene; preserve all existing scenes.` to the rest of the system?**
-  _5 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `E_` connect `Community 1` to `Community 0`, `Community 2`, `Community 4`, `Community 5`, `Community 6`, `Community 8`, `Community 12`, `Community 15`?**
+  _High betweenness centrality (0.062) - this node is a cross-community bridge._
+- **Why does `fn` connect `Community 3` to `Community 0`, `Community 1`, `Community 2`, `Community 4`, `Community 16`?**
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+- **Why does `q()` connect `Community 13` to `Community 2`, `Community 15`?**
+  _High betweenness centrality (0.051) - this node is a cross-community bridge._
+- **What connects `Yv`, `Build an isolated, editable IK character rig and a portable RPS animation pack.`, `Build an isolated, editable IK character rig and a portable RPS animation pack.` to the rest of the system?**
+  _7 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.02 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.02 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.01 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.02 - nodes in this community are weakly interconnected._

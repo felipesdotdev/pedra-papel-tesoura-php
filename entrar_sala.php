@@ -6,15 +6,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     try { exigirJogador(); } catch (Throwable $e) { falhaPagina($e); }
     inicioPagina('Entrar em uma sala', 'entrada');
     ?>
-    <section class="intro"><p class="etiqueta">MULTIPLAYER</p><h1>Entre<br>na disputa.</h1><p>Peça o código para quem criou a sala.</p></section>
+    <section class="intro"><h1>Entrar<br>na sala</h1></section>
     <section class="cartao estreito">
         <form method="post">
             <?php campoCsrf(); ?>
             <label for="codigo">Código da sala</label>
             <input id="codigo" name="codigo" maxlength="6" minlength="6" required placeholder="AB7K2P" pattern="[A-Fa-f0-9]{6}" autocomplete="off" spellcheck="false">
-            <button type="submit">Entrar na sala <span aria-hidden="true">↗</span></button>
+            <button type="submit">Entrar <span aria-hidden="true">↗</span></button>
         </form>
-        <p class="ajuda">O código tem 6 caracteres.</p>
         <a class="voltar-menu" href="menu.php">← Voltar ao menu</a>
     </section>
     <?php

@@ -96,14 +96,10 @@ h1, h2 { font-family: var(--display); font-weight: 900; font-style: italic; text
 .opcao-menu.selecionada { background: var(--ciano); padding-left: 3.5vw; }
 .opcao-menu:focus-visible { outline: none; }
 .opcao-menu:active { background: #18c5de; }
-.perfil-menu { margin-top: 4.3vh; width: min(270px, 18vw); }
-.rotulo, .etiqueta { font-size: 10px; font-weight: 700; letter-spacing: .16em; }
-.rotulo { color: var(--muted); margin-bottom: 7px; }
-.nome-jogador { margin: 0; font-size: 15px; font-weight: 700; overflow-wrap: anywhere; }
+.perfil-menu { margin-top: 4.3vh; padding-top: 18px; border-top: 1px solid #c4cdd1; width: min(270px, 18vw); }
+.etiqueta { font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+.nome-jogador { margin: 0; font: italic 900 clamp(25px, 2.1vw, 36px)/1.1 var(--display); text-transform: uppercase; overflow-wrap: anywhere; }
 .identificador { font-size: 11px; color: var(--muted); font-weight: 400; white-space: nowrap; }
-.placar { display: flex; gap: 22px; margin-top: 19px; }
-.placar span { font-size: 8px; font-weight: 700; letter-spacing: .08em; color: var(--muted); }
-.placar strong { display: block; margin-bottom: 5px; font-size: 21px; font-weight: 700; letter-spacing: -.04em; color: var(--tinta); }
 .comandos { position: fixed; bottom: 3.5vh; right: 2.4vw; display: flex; align-items: center; gap: 20px; background: #051a2699; color: #fff; padding: 10px 15px; }
 .comandos > span { display: flex; align-items: center; gap: 6px; font-family: var(--display); font-weight: 900; font-style: italic; font-size: 17px; text-transform: uppercase; }
 .comandos i { color: #8da9b3; }
@@ -219,7 +215,6 @@ tbody th { min-width: 130px; max-width: 240px; overflow-wrap: anywhere; }
 .duelo .versus { font: italic 900 36px var(--display); color: #66757d; letter-spacing: -.04em; }
 .arena #status { background: var(--tinta); color: #fff; padding: 14px 12px; margin: 0 0 18px; font-size: clamp(24px, 2.6vw, 37px); }
 .escolhas button { position: relative; min-height: 165px; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%); }
-.escolhas button small { position: absolute; top: 10px; left: 17px; font: 700 10px Arial, sans-serif; color: #50636c; }
 .escolhas button > span { font-size: 47px; margin-top: 12px; }
 .escolhas button.selecionada { border: 0; box-shadow: inset 0 -5px var(--tinta); }
 
@@ -240,9 +235,6 @@ tbody th { min-width: 130px; max-width: 240px; overflow-wrap: anywhere; }
 .ranking-vazio h2 { font-size: clamp(30px, 3.4vw, 51px); margin: 0; }
 .ranking-vazio > p:not(.etiqueta) { font-size: 13px; color: #596773; margin: 14px 0 22px; }
 .botao-jogo { display: inline-flex; gap: 28px; justify-content: space-between; align-items: center; min-height: 48px; padding: 12px 22px; background: var(--ciano); font: italic 900 22px var(--display); text-transform: uppercase; text-decoration: none; }
-.vagas-podio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; width: min(100%, 700px); margin-top: 35px; border-top: 1px solid #c2cdd2; padding: 18px 0; }
-.vagas-podio > span { display: flex; align-items: center; justify-content: center; gap: 12px; color: #62727b; font-size: 8px; font-weight: 700; letter-spacing: .1em; }
-.vagas-podio b { font: italic 900 29px var(--display); color: #8d9ba3; }
 .tabela-ranking { padding-top: 0; background: #ffffff70; }
 .tabela-ranking table { font-size: 15px; }
 .tabela-ranking thead { background: #e0e7eb; }
@@ -280,8 +272,6 @@ tbody th { min-width: 130px; max-width: 240px; overflow-wrap: anywhere; }
     .ranking-vazio { min-height: 430px; padding: 35px 12px 0; }
     .ranking-vazio h2 { font-size: 30px; }
     .ranking-vazio > p:not(.etiqueta) { font-size: 12px; }
-    .vagas-podio { gap: 8px; }
-    .vagas-podio > span { flex-direction: column; gap: 5px; font-size: 6px; }
     .tabela-ranking thead th, .tabela-ranking tbody td, .tabela-ranking tbody th { padding: 14px 9px; }
     .tabela-ranking thead th { font-size: 8px; }
     .tabela-ranking tbody th { min-width: 110px; font-size: 12px; }
@@ -291,4 +281,31 @@ tbody th { min-width: 130px; max-width: 240px; overflow-wrap: anywhere; }
     .escolhas button { min-height: 145px; }
     .escolhas button > span { font-size: 36px; }
     .duelo strong { font-size: 23px; }
+}
+
+/* Convite e placar: apenas as informações necessárias em cada tela. */
+.tela-entrada .intro { padding-bottom: 30px; }
+.tela-entrada .estreito > a { margin-top: 20px; }
+.convite-sala { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 24px; margin: 0 0 28px; background: #edf2f5; border-left: 3px solid var(--ciano); }
+.label-codigo { display: block; margin-bottom: 5px; font-size: 10px; font-weight: 700; color: #61717b; }
+.convite-sala .codigo { padding: 0; background: transparent; font-size: clamp(28px, 3.4vw, 43px); letter-spacing: .14em; }
+.convite-sala button { flex-shrink: 0; font-size: 18px; }
+.aguardando .duelo, .aguardando .escolhas { display: none; }
+.aguardando .arena { min-height: 170px; display: grid; place-content: center; }
+.aguardando .arena #status { background: transparent; color: var(--tinta); margin: 0; }
+#pedido-revanche:empty { display: none; }
+.meu-placar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 15px 0 24px; }
+.meu-placar > strong { min-width: 0; overflow-wrap: anywhere; font: italic 900 29px/1.1 var(--display); text-transform: uppercase; }
+.meu-placar dl { display: flex; flex-shrink: 0; gap: 32px; margin: 0; }
+.meu-placar dl > div { display: flex; flex-direction: column; gap: 6px; }
+.meu-placar dt { order: 2; font-size: 10px; color: #5c6c76; }
+.meu-placar dd { order: 1; margin: 0; font: italic 900 35px/1 var(--display); }
+.ranking-vazio .botao-jogo { margin-top: 25px; }
+
+@media (max-width: 600px) {
+    .convite-sala { padding: 16px 14px; gap: 10px; }
+    .convite-sala .codigo { font-size: 28px; letter-spacing: .1em; }
+    .convite-sala button { padding: 10px 12px; font-size: 16px; }
+    .meu-placar { gap: 16px; flex-wrap: wrap; }
+    .meu-placar dl { gap: 24px; }
 }

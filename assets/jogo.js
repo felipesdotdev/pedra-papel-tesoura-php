@@ -22,6 +22,7 @@ function mostrarErro(mensagem) {
 function desenhar() {
     if (!estado) return;
     encerrada = estado.sala_status === 'encerrada';
+    jogo.classList.toggle('aguardando', estado.sala_status === 'aguardando');
     document.querySelector('#oponente').textContent = estado.oponente;
     const podeJogar = !encerrada && !falhaConsulta && !enviando && estado.sala_status === 'jogando'
         && !estado.finalizada && !estado.minha_escolha;
@@ -37,27 +38,28 @@ function desenhar() {
     sair.hidden = encerrada;
     document.querySelector('#voltar').hidden = !encerrada;
     document.querySelector('#pedido-revanche').textContent = !encerrada && estado.finalizada && estado.modo !== 'bot'
-        ? (estado.minha_revanche ? 'Aguardando o outro jogador aceitar.'
-            : estado.oponente_revanche ? 'Seu oponente quer uma revanche!' : 'Uma nova rodada começa quando os dois pedirem revanche.') : '';
+        ? (estado.minha_revanche ? 'Aguardando adversário…'
+            : estado.oponente_revanche ? 'Seu adversário pediu revanche.' : '') : '';
 
     if (encerrada) {
         statusJogo.textContent = 'Sala encerrada';
         detalhes.textContent = estado.finalizada
             ? `${estado.resultado} Você: ${estado.minha_escolha}. Oponente: ${estado.escolha_oponente}.`
-            : 'Um jogador saiu. A rodada incompleta não conta para o ranking.';
+            : 'O outro jogador saiu.';
     } else if (estado.sala_status === 'aguardando') {
-        statusJogo.textContent = 'Aguardando seu amigo…';
-        detalhes.textContent = 'Peça para ele entrar com o código desta sala.';
+        statusJogo.textContent = 'Aguardando jogador…';
+        detalhes.textContent = '';
     } else if (estado.finalizada) {
         statusJogo.textContent = estado.resultado;
-        detalhes.textContent = `Você escolheu ${estado.minha_escolha}. ${estado.oponente} escolheu ${estado.escolha_oponente}.`;
+        detalhes.textContent = `${estado.oponente} escolheu ${estado.escolha_oponente}.`;
     } else if (estado.minha_escolha) {
-        statusJogo.textContent = 'Escolha registrada!';
-        detalhes.textContent = 'Aguardando a escolha do outro jogador…';
+        statusJogo.textContent = `Você escolheu ${estado.minha_escolha}`;
+        detalhes.textContent = 'Aguardando adversário…';
     } else {
-        statusJogo.textContent = 'Qual vai ser sua escolha?';
-        detalhes.textContent = estado.oponente_jogou ? 'Seu oponente já escolheu. Agora é com você.' : 'As escolhas só aparecem depois que os dois jogarem.';
+        statusJogo.textContent = 'Faça sua escolha';
+        detalhes.textContent = estado.oponente_jogou ? 'Seu adversário já escolheu.' : '';
     }
+    detalhes.hidden = !detalhes.textContent;
 }
 
 async function requisicao(caminho, dados) {
@@ -124,4 +126,19 @@ for (const botao of botoes) {
 }
 revanche.addEventListener('click', () => executar('revanche'));
 sair.addEventListener('click', () => executar('sair_sala'));
+document.querySelector('#copiar-codigo')?.addEventListener('click', async (evento) => {
+    const botao = evento.currentTarget;
+    const codigo = document.querySelector('#codigo-convite');
+    try {
+        await navigator.clipboard.writeText(codigo.textContent);
+        botao.textContent = 'Copiado';
+    } catch {
+        const selecao = window.getSelection();
+        const faixa = document.createRange();
+        faixa.selectNodeContents(codigo);
+        selecao.removeAllRanges();
+        selecao.addRange(faixa);
+        botao.textContent = 'Use Ctrl+C';
+    }
+});
 atualizarSala();

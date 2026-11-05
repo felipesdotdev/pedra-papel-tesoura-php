@@ -19,9 +19,7 @@ inicioPagina('Menu principal', 'menu');
     <a class="opcao-menu" data-menu href="ranking.php">Ranking</a>
     <a class="opcao-menu" data-menu href="index.php">Trocar jogador</a>
 </nav>
-<section class="perfil-menu" aria-label="Seu jogador e placar">
-    <p class="rotulo">JOGADOR ATUAL</p>
-    <p class="nome-jogador"><?= escapar($jogador['nome']) ?> <span class="identificador">#<?= $jogador['id'] ?></span></p>
-    <div class="placar"><span><strong><?= $jogador['vitorias'] ?></strong> VITÓRIAS</span><span><strong><?= $jogador['empates'] ?></strong> EMPATES</span><span><strong><?= $jogador['derrotas'] ?></strong> DERROTAS</span></div>
+<section class="perfil-menu" aria-label="Jogador">
+    <p class="nome-jogador"><?= escapar($jogador['nome']) ?></p>
 </section>
 <?php fimPagina(); ?>

@@ -2,6 +2,9 @@
 require __DIR__ . '/includes/funcoes.php';
 try {
     $jogadores = consultar('SELECT * FROM jogadores WHERE vitorias + derrotas + empates > 0 ORDER BY vitorias DESC, derrotas ASC, empates DESC, id ASC LIMIT 50')->fetchAll();
+    $meuJogador = !empty($_SESSION['jogador_id'])
+        ? consultar('SELECT nome, vitorias, empates, derrotas FROM jogadores WHERE id = ?', [(int) $_SESSION['jogador_id']])->fetch()
+        : null;
 } catch (Throwable $e) { falhaPagina($e); }
 $destino = empty($_SESSION['jogador_id']) ? 'index.php' : 'menu.php';
 inicioPagina('Classificação', 'ranking');
@@ -13,16 +16,22 @@ inicioPagina('Classificação', 'ranking');
 <section class="titulo-ranking">
     <h1>Classificação</h1>
 </section>
+<?php if ($meuJogador): ?>
+<section class="meu-placar" aria-label="Seu placar">
+    <strong><?= escapar($meuJogador['nome']) ?></strong>
+    <dl><?php foreach (['vitorias' => 'Vitórias', 'empates' => 'Empates', 'derrotas' => 'Derrotas'] as $campo => $rotulo): ?>
+        <div><dt><?= $rotulo ?></dt><dd><?= $meuJogador[$campo] ?></dd></div>
+    <?php endforeach; ?></dl>
+</section>
+<?php endif; ?>
 <div class="faixa-ranking"><span>Ranking geral</span><span><?= count($jogadores) ?> classificados</span></div>
 <?php if (!$jogadores): ?>
 <section class="ranking-vazio" aria-labelledby="titulo-vazio">
     <div class="emblema-trofeu" aria-hidden="true">
         <svg viewBox="0 0 64 64" fill="none"><path d="M20 10h24v17c0 10-5 16-12 16s-12-6-12-16V10Z"/><path d="M20 15H10v7c0 9 5 13 12 13M44 15h10v7c0 9-5 13-12 13M32 43v11M23 55h18"/><path d="m32 19 2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L32 19Z"/></svg>
     </div>
-    <h2 id="titulo-vazio">O topo ainda está livre.</h2>
-    <p>Encontre um adversário, vença seu primeiro duelo<br>e coloque seu nome no placar.</p>
-    <a class="botao-jogo" href="<?= $destino ?>">Buscar uma partida <span aria-hidden="true">↗</span></a>
-    <div class="vagas-podio" aria-hidden="true"><span><b>01</b> PRIMEIRO LUGAR</span><span><b>02</b> SEGUNDO LUGAR</span><span><b>03</b> TERCEIRO LUGAR</span></div>
+    <h2 id="titulo-vazio">Nenhuma partida ainda.</h2>
+    <a class="botao-jogo" href="<?= $destino ?>">Jogar <span aria-hidden="true">↗</span></a>
 </section>
 <?php else: ?>
 <section class="tabela tabela-ranking" aria-label="Classificação dos jogadores">

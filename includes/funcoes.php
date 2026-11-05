@@ -64,7 +64,7 @@ function inicioPagina(string $titulo, string $layout = 'pagina'): void
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
     echo '<title>' . escapar($titulo) . ' · Pedra, papel e tesoura</title>';
     echo '<link rel="preload" href="assets/fonts/BarlowCondensed-BlackItalic.ttf" as="font" type="font/ttf" crossorigin>';
-    echo '<link rel="stylesheet" href="assets/estilo.css?v=4"></head><body class="tela-' . escapar($layout) . '">';
+    echo '<link rel="stylesheet" href="assets/estilo.css?v=5"></head><body class="tela-' . escapar($layout) . '">';
     echo '<div class="fundo-cenario" aria-hidden="true"></div><div class="painel-menu" aria-hidden="true"></div>';
     echo '<main class="container" id="conteudo">';
     if ($layout === 'pagina') {

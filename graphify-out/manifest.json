@@ -8,28 +8,28 @@
     "hash": "433e39c627a4b2bb41de3dd3ec2de00c"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\entrar_sala.php": {
-    "mtime": 1793888545.7053194,
-    "hash": "725541d96b645834c6b8919604227007"
+    "mtime": 1793890545.8916621,
+    "hash": "818cd8376944459389506ff56faa0c5e"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\index.php": {
-    "mtime": 1793888545.704319,
-    "hash": "605f8b53b2e3348cb0c39c29d9bca81f"
+    "mtime": 1793890545.8916621,
+    "hash": "da9f7eb5a489ac853de8067503614a47"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\menu.php": {
-    "mtime": 1793888546.192087,
-    "hash": "dd87f34f8c1d96e607474cc7790c21a7"
+    "mtime": 1793890545.8906622,
+    "hash": "c7b8277d173e57e2889599bfb9c46332"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\personagem.php": {
     "mtime": 1793888336.6550586,
     "hash": "210a96d63bc64dc7045550fbdebd3c57"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\ranking.php": {
-    "mtime": 1793889908.8593073,
-    "hash": "1a60824df51ff19ad30b1c220d7dc8af"
+    "mtime": 1793890545.8956625,
+    "hash": "1e62f64d0a1d23954b47291b89ba5733"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\sala.php": {
-    "mtime": 1793888979.6562915,
-    "hash": "01ad2811c789c032f2a2b98b34e3d48f"
+    "mtime": 1793890599.7591288,
+    "hash": "9301fffeedef8fdd4112e3e52eadbea1"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\api\\base.php": {
     "mtime": 1793887650.220034,
@@ -52,8 +52,8 @@
     "hash": "b1a84a7b0b4a8da045c870108fc8848d"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\jogo.js": {
-    "mtime": 1793887650.2220137,
-    "hash": "a56b798ca677eed2c779b1a09ed1d5b6"
+    "mtime": 1793890599.758155,
+    "hash": "2183aa88cb65277bf3cc833cb6b1ecc7"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\assets\\menu.js": {
     "mtime": 1793888715.4073215,
@@ -80,8 +80,8 @@
     "hash": "a9a10af5915bea401396b5efd3a38c79"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\funcoes.php": {
-    "mtime": 1793890019.625862,
-    "hash": "db0b8a8b96eaeec8acc49117250424ea"
+    "mtime": 1793890545.8966627,
+    "hash": "4ce7ec8d28fa8c94e64b79163e4043c5"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\includes\\personagem.php": {
     "mtime": 1793889363.1882017,
@@ -90,6 +90,10 @@
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\criar_pack.py": {
     "mtime": 1793890110.4612527,
     "hash": "15aa3c7a0eb5bbdf2ce998a033595414"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\criar_pack_v2.py": {
+    "mtime": 1793890371.866922,
+    "hash": "08cdfc2c4a0327246c0f62f4ae3fda01"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\aproximar_foto.py": {
     "mtime": 1793888973.364545,
@@ -102,6 +106,10 @@
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\finalizar_personagem.py": {
     "mtime": 1793889343.6284652,
     "hash": "d11de12decac4597f20ec9530834b5cd"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\personagem_3d_rig.py": {
+    "mtime": 1793890551.6511233,
+    "hash": "c6c3bf3752bb29936b24be39e9ae7b5f"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\personagem\\reconstruir_referencia.py": {
     "mtime": 1793888959.4897664,
@@ -158,6 +166,14 @@
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\Pedra_065.png": {
     "mtime": 1793890162.238345,
     "hash": "49d6a329871b9be5af288750fbc2daf0"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\referencia_frente.png": {
+    "mtime": 1793890638.4957986,
+    "hash": "e1c980e7e36d5cc0ea14a9dfe416bca0"
+  },
+  "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\referencia_perfil.png": {
+    "mtime": 1793890638.5617976,
+    "hash": "cd0266d098e9a46190caa7fc4b110c7c"
   },
   "C:\\Users\\luisf\\Documents\\ChatGPT\\pedra-papel-tesoura-php\\output\\animacoes\\Tesoura_058.png": {
     "mtime": 1793890165.9167218,
